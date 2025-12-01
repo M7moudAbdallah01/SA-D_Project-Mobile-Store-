@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Order - Phone Store</title>
+  <link rel="stylesheet" href="order-style.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">TP</div>
+        <div>
+          <div class="brand-title">Phone Store</div>
+          <div class="muted">Latest smartphones — Fast delivery</div>
+        </div>
+      </div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="cart.html">Cart</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="card">
+        <h1>Order Form</h1>
+        <p class="muted">Enter customer details, choose products, and submit your order.</p>
+
+        <form id="orderForm" onsubmit="return submitOrder(event)">
+          <div class="row">
+            <div>
+              <label>Full Name</label>
+              <input type="text" id="name" required placeholder="Your name here" />
+            </div>
+            <div>
+              <label>Phone Number</label>
+              <input type="tel" id="phone" required placeholder="01xxxxxxxx" />
+            </div>
+          </div>
+
+          <div class="row">
+            <div>
+              <label>Email</label>
+              <input type="email" id="email" placeholder="example@mail.com" />
+            </div>
+            <div>
+              <label>Payment Method</label>
+              <select id="payment">
+                <option value="cash">Cash on Delivery</option>
+                <option value="card">Credit Card</option>
+                <option value="wallet">Mobile Wallet</option>
+              </select>
+            </div>
+          </div>
+
+          <label>Address (Delivery Details)</label>
+          <textarea id="address" placeholder="Street, area, city..."></textarea>
+
+          <hr />
+
+          <h3>Select Products</h3>
+          <div id="products"></div>
+
+          <div class="btns">
+            <button type="button" class="btn ghost" onclick="resetSelection()">Clear</button>
+            <button type="submit" class="btn">Submit Order</button>
+          </div>
+        </form>
+      </section>
+
+      <aside class="card summary">
+        <h3>Order Summary</h3>
+        <div id="summaryList"></div>
+        <div class="line">
+          <div>Subtotal</div>
+          <div id="subtotal">0 EGP</div>
+        </div>
+        <div class="line">
+          <div>Delivery Fee</div>
+          <div id="delivery">0 EGP</div>
+        </div>
+        <div class="line total">
+          <div>Total</div>
+          <div id="grandTotal">0 EGP</div>
+        </div>
+        <div class="note">Review your order before confirming. You will receive a confirmation message.</div>
+      </aside>
+    </main>
+  </div>
+
+  <script src="order-script.js"></script>
+</body>
+</html>
