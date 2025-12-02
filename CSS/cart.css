@@ -1,0 +1,111 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f5f5f5;
+}
+
+header {
+  background: #097ba8;
+  color: rgb(255, 255, 255);
+  padding: 20px;
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.cart-container {
+  max-width: 800px;
+  margin: 30px auto;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  padding: 15px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.item img {
+  width: 80px;
+  border-radius: 10px;
+}
+
+.item-info {
+  flex: 1;
+  margin-left: 15px;
+}
+
+.buttons button {
+  padding: 6px 10px;
+  margin: 4px;
+  cursor: pointer;
+  border: none;
+  background: #bd3838;
+  color: white;
+  border-radius: 5px;
+}
+
+.buttons button:hover {
+  background: #444;
+}
+
+.total {
+  text-align: right;
+  margin-top: 20px;
+  font-size: 20px;
+  font-weight: bold;
+}
+/* Buttons container */
+.buttons button {
+  border: none;
+  padding: 6px 12px;
+  margin: 4px 2px;
+  border-radius: 6px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* + button */
+.buttons button:nth-child(1) {
+  background-color: #10c73a; /* green */
+}
+
+/* - button */
+.buttons button:nth-child(2) {
+  background-color: #ffc107; /* yellow */
+  color: black;
+}
+
+/* delete button */
+.buttons button:nth-child(3) {
+  background-color: #ff0019; /* red */
+}
+
+/* hover effect */
+.buttons button:hover {
+  opacity: 0.8;
+}
+
+/* Checkout button */
+.checkout-btn {
+  margin-top: 20px;
+  width: 100%;
+  padding: 15px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.checkout-btn:hover {
+  background-color: #0056b3;
+}
+
