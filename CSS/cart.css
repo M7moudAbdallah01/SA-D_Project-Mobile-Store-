@@ -59,7 +59,6 @@ header {
   font-size: 20px;
   font-weight: bold;
 }
-/* Buttons container */
 .buttons button {
   border: none;
   padding: 6px 12px;
@@ -72,26 +71,22 @@ header {
 
 /* + button */
 .buttons button:nth-child(1) {
-  background-color: #18df46; /* green */
+  background-color: #18df46; 
 }
 
-/* - button */
 .buttons button:nth-child(2) {
-  background-color: #ffc107; /* yellow */
+  background-color: #ffc107; 
   color: black;
 }
 
-/* delete button */
 .buttons button:nth-child(3) {
-  background-color: #ff0019; /* red */
+  background-color: #ff0019; 
 }
 
-/* hover effect */
 .buttons button:hover {
   opacity: 0.8;
 }
 
-/* Checkout button */
 .checkout-btn {
   margin-top: 20px;
   width: 100%;
