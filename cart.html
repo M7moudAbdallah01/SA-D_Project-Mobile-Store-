@@ -1,140 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cart</title>
-    <link rel="stylesheet" href="CSS/cart.css">
-    <link rel="stylesheet" href="CSS/global.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cart</title>
+
+  <link rel="stylesheet" href="CSS/cart.css">
+  <link rel="stylesheet" href="CSS/global.css">
 </head>
 
 <body>
-    <nav class="navbar">
-      <div class="nav-container">
-        <div class="nav-logo">
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <span>MS</span>
+        <h3>Mobile Store</h3>
+      </div>
+
+      <ul class="nav-links">
+        <li><a href="Home.html">Home</a></li>
+        <li><a href="Products.html">Products</a></li>
+        <li><a href="Accessories.html">Accessories</a></li>
+        <li><a href="Contact.html">Contact Us</a></li>
+        <li><a href="Profile.html">Profile</a></li>
+        <li><a href="Cart.html" class="active">Cart</a></li>
+      </ul>
+
+      <div class="nav-auth">
+        <a href="Login.html" class="btn-login">Logout</a>
+      </div>
+    </div>
+  </nav>
+
+  <header>Your Cart</header>
+
+  <!-- Cart Products Will Appear Here -->
+  <div class="cart-container" id="cartContainer">
+    
+    <!-- المنتجات هتتحط هنا بالـ JavaScript -->
+
+    <p class="total" id="total">Total: $0</p>
+    <button class="checkout-btn" onclick="checkout()">Checkout</button>
+
+  </div>
+
+  <!-- JS File -->
+  <script src="JS/cart.js"></script>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+
+      <div>
+        <div class="footer-logo">
           <span>MS</span>
           <h3>Mobile Store</h3>
         </div>
 
-        <ul class="nav-links">
-          <li><a href="Home.html">Home</a></li>
-          <li><a href="Products.html">Products</a></li>
-          <li><a href="Accessories.html">Accessories</a></li>
-          <li><a href="Contact.html">Contact Us</a></li>
-          <li><a href="Profile.html">Profile</a></li>
-          <li><a href="Cart.html">Cart</a></li>
-        </ul>
-
-        <div class="nav-auth">
-          <a href="Login.html" class="btn-login">Logout</a>
-        </div>
-
+        <p style="color: var(--footer-mid); line-height: 1.6;">
+          Your trusted place for all mobile phones, accessories, repairs, and latest tech solutions.
+        </p>
       </div>
-  </nav>
 
-<header>Your Cart</header>
-
-<div class="cart-container">
-
-    <div class="item" data-price="1199">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStHWm31jvrM36_cpSWPLJf469jG_nM3Qiw8vK4vm0Gm4cx2eK8qz-YgCn21SaR58l_zlg&usqp=CAU">
-
-        <div class="item-info">
-            <h3>Samsung S23 Ultra</h3>
-            <p>Price: $1199</p>
-            <p>Quantity: <span class="qty">1</span></p>
-
-            <div class="buttons">
-                <button onclick="add(this)">+</button>
-                <button onclick="removeOne(this)">-</button>
-                <button onclick="deleteItem(this)">Delete</button>
-            </div>
+      <div>
+        <h4 class="footer-title">Quick Links</h4>
+        <div class="footer-links-row">
+          <a href="Home.html">Home</a>
+          <a href="Products.html">Shop</a>
+          <a href="#">Offers</a>
+          <a href="Contact.html">Contact Us</a>
+          <a href="#">About Us</a>
         </div>
+      </div>
+
     </div>
 
-
-    <div class="item" data-price="1099">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUBUhPSmMxkgSquLU66Tisf8H0n_mt6qHw_Q&s">
-
-        <div class="item-info">
-            <h3>Huawei Mate 60</h3>
-            <p>Price: $1099</p>
-            <p>Quantity: <span class="qty">1</span></p>
-
-            <div class="buttons">
-                <button onclick="add(this)">+</button>
-                <button onclick="removeOne(this)">-</button>
-                <button onclick="deleteItem(this)">Delete</button>
-            </div>
-        </div>
+    <div class="footer-bottom">
+      © 2025 Mobile Store. All Rights Reserved.
     </div>
+  </footer>
 
-
-    <div class="item" data-price="1120">
-        <img src="https://cdn.shortpixel.ai/spai/q_glossy+ret_img+to_webp/mobizil.com/wp-content/uploads/2025/07/oppo-reno-14-pro-2.jpg">
-
-        <div class="item-info">
-            <h3>Oppo Reno 14 Pro</h3>
-            <p>Price: $1120</p>
-            <p>Quantity: <span class="qty">1</span></p>
-
-            <div class="buttons">
-                <button onclick="add(this)">+</button>
-                <button onclick="removeOne(this)">-</button>
-                <button onclick="deleteItem(this)">Delete</button>
-            </div>
-        </div>
-    </div>
-    <div class="item" data-price="1120">
-        <img src="https://cdn.salla.sa/lGvlKd/DIIwbmdYIGgvI3A8ikwoQ2LtcF9QMzGWWhELrnux.png">
-
-        <div class="item-info">
-            <h3>Google Pixel 7</h3>
-            <p>Price: $749</p>
-            <p>Quantity: <span class="qty">1</span></p>
-
-            <div class="buttons">
-                <button onclick="add(this)">+</button>
-                <button onclick="removeOne(this)">-</button>
-                <button onclick="deleteItem(this)">Delete</button>
-            </div>
-        </div>
-    </div>
-
-    <p class="total">Total: $0</p>
-    <button class="checkout-btn" onclick="checkout()">Checkout</button>
-
-
-</div>
-
-<script src="JS/cart.js"></script>
-
-    <footer class="footer">
-        <div class="footer-container">
-            <div>
-            <div class="footer-logo">
-                <span>MS</span>
-                <h3>Mobile Store</h3>
-            </div>
-            <p style="color: var(--footer-mid); line-height: 1.6;">
-                Your trusted place for all mobile phones, accessories, repairs, and latest tech solutions.
-            </p>
-            </div>
-            <div>
-                <h4 class="footer-title">Quick Links</h4>
-                <div class="footer-links-row">
-                    <a href="Home.html">Home</a>
-                    <a href="#">Shop</a>
-                    <a href="#">Offers</a>
-                    <a href="#">Contact Us</a>
-                    <a href="#">About Us</a>
-                </div>
-            </div>
-
-        </div>
-        <div class="footer-bottom">
-            © 2025 Mobile Store. All Rights Reserved.
-        </div>
-    </footer>
 </body>
 </html>
