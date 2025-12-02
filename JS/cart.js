@@ -1,76 +1,89 @@
-let cartContainer = document.getElementById("cartContainer");
-let totalEl = document.getElementById("total");
+document.addEventListener("DOMContentLoaded", () => {
+    const cartContainer = document.getElementById("cartContainer");
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    function displayCart() {
+        cartContainer.innerHTML = ""; // امسح القديم
 
-function displayCart() {
-    cartContainer.innerHTML = "";
+        if (cart.length === 0) {
+            const empty = document.createElement("h3");
+            empty.textContent = "Your cart is empty 🛒";
+            cartContainer.appendChild(empty);
+            return;
+        }
 
-    if (cart.length === 0) {
-        cartContainer.innerHTML = "<h3>Your cart is empty 🛒</h3>";
-        return;
-    }
+        let total = 0;
 
-    let total = 0;
+        cart.forEach((item, index) => {
+            total += item.price * item.quantity;
 
-    cart.forEach((item , index) => {
+            const itemDiv = document.createElement("div");
+            itemDiv.classList.add("item");
 
-        total += item.price * item.quantity;
-
-        cartContainer.innerHTML += `
-        <div class="item">
-            <img src="${item.img}">
-            <div class="item-info">
-                <h3>${item.name}</h3>
-                <p>Price: $${item.price}</p>
-                <p>Quantity: <span class="qty">${item.quantity}</span></p>
-
-                <div class="buttons">
-                    <button onclick="increase(${index})">+</button>
-                    <button onclick="decrease(${index})">-</button>
-                    <button onclick="deleteItem(${index})">Delete</button>
+            itemDiv.innerHTML = `
+                <img src="${item.img}">
+                <div class="item-info">
+                    <h3>${item.name}</h3>
+                    <p>Price: $${item.price}</p>
+                    <p>Quantity: <span class="qty">${item.quantity}</span></p>
+                    <div class="buttons">
+                        <button class="increase">+</button>
+                        <button class="decrease">-</button>
+                        <button class="delete">Delete</button>
+                    </div>
                 </div>
-            </div>
-        </div>
-        `;
-    });
+            `;
 
-    cartContainer.innerHTML += `
-        <p class="total">Total: $${total}</p>
-        <button class="checkout-btn" onclick="checkout()">Checkout</button>
-    `;
-}
+            // زرار +
+            itemDiv.querySelector(".increase").addEventListener("click", () => {
+                cart[index].quantity++;
+                updateCart();
+            });
 
-function increase(index){
-    cart[index].quantity++;
-    updateCart();
-}
+            // زرار -
+            itemDiv.querySelector(".decrease").addEventListener("click", () => {
+                if(cart[index].quantity > 1) {
+                    cart[index].quantity--;
+                } else {
+                    cart.splice(index, 1);
+                }
+                updateCart();
+            });
 
-function decrease(index){
-    if(cart[index].quantity > 1){
-        cart[index].quantity--;
-    } else {
-        cart.splice(index , 1);
+            // زرار Delete
+            itemDiv.querySelector(".delete").addEventListener("click", () => {
+                cart.splice(index, 1);
+                updateCart();
+            });
+
+            cartContainer.appendChild(itemDiv);
+        });
+
+        // التوتال و Checkout
+        const totalP = document.createElement("p");
+        totalP.classList.add("total");
+        totalP.textContent = `Total: $${total}`;
+        cartContainer.appendChild(totalP);
+
+        const checkoutBtn = document.createElement("button");
+        checkoutBtn.classList.add("checkout-btn");
+        checkoutBtn.textContent = "Checkout";
+        checkoutBtn.addEventListener("click", checkout);
+        cartContainer.appendChild(checkoutBtn);
     }
-    updateCart();
-}
 
-function deleteItem(index){
-    cart.splice(index , 1);
-    updateCart();
-}
+    function updateCart() {
+        localStorage.setItem("cart", JSON.stringify(cart));
+        displayCart();
+    }
 
-function updateCart(){
-    localStorage.setItem("cart" , JSON.stringify(cart));
+    function checkout() {
+        alert("Checkout successful ✅");
+        localStorage.removeItem("cart");
+        cart = [];
+        displayCart();
+    }
+
+    // Load cart initially
     displayCart();
-}
-
-function checkout(){
-    alert("Checkout successful ✅");
-    localStorage.removeItem("cart");
-    cart = [];
-    displayCart();
-}
-
-// load cart on page open
-displayCart();
+});
