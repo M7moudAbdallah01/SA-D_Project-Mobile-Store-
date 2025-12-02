@@ -1,0 +1,115 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+ html {
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.Back {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.Back::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url("https://images.unsplash.com/photo-1497215728101-856f4ea42174?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2940&q=80");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.container {
+    display: flex;
+    min-height: 100%;
+    justify-content: center;
+}
+
+.container form {
+    width: 671px;
+    height: 602px;
+    display: flex;
+    justify-content: center;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.7);
+    flex-wrap: wrap;
+    margin: 21px;
+    padding: 21px;
+}
+
+.container form h1 {
+    color: rgb(0, 0, 0);
+    margin-top: 21px;
+    text-align: center;
+    font-weight: 700;
+    width: 500px;
+}
+
+.container form h2 {
+    color: black;
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.container form input {
+    width: 300px;
+    height: 50px;
+    padding-left: 10px;
+    border: none;
+    font-size: 20px;
+    margin-bottom: 10px;
+    background: none;
+    border-bottom: 2px solid #000000;
+    color: black;
+}
+
+.container form input::placeholder {
+    color: #000000;
+}
+
+.container form #LastName, 
+.container form #MobileNumber {
+    margin-left: 20px;
+}
+
+.container form textarea {
+    width: 100%;
+    padding: 10px;
+    height: 151px;
+    
+    border: 2px solid #000000;
+    font-size: 20px;
+    margin-bottom: 20px;
+    background: none;
+    color: #000;
+}
+
+.container form #send {
+    width: 200px;
+    background: rgb(0, 0, 0);
+    color: white;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    border-radius: 25px;
+    margin: 0 auto;
+    font-size: 30px;
+}
+
+.container form #send:hover {
+   box-shadow: 0px 5px 15px rgb(255, 238, 0) ;
+    transition: box-shadow 0.3s ;
+}  
+   
+
