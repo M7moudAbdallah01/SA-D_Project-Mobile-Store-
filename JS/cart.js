@@ -1,44 +1,76 @@
-window.onload = function () {
-  updateTotal();
-};
+let cartContainer = document.getElementById("cartContainer");
+let totalEl = document.getElementById("total");
 
-function updateTotal() {
-  let items = document.querySelectorAll(".item");
-  let total = 0;
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-  items.forEach((item) => {
-    let price = parseInt(item.getAttribute("data-price"));
-    let qty = parseInt(item.querySelector(".qty").innerText);
+function displayCart() {
+    cartContainer.innerHTML = "";
 
-    total += price * qty;
-  });
+    if (cart.length === 0) {
+        cartContainer.innerHTML = "<h3>Your cart is empty 🛒</h3>";
+        return;
+    }
 
-  document.querySelector(".total").innerText = "Total: $" + total;
+    let total = 0;
+
+    cart.forEach((item , index) => {
+
+        total += item.price * item.quantity;
+
+        cartContainer.innerHTML += `
+        <div class="item">
+            <img src="${item.img}">
+            <div class="item-info">
+                <h3>${item.name}</h3>
+                <p>Price: $${item.price}</p>
+                <p>Quantity: <span class="qty">${item.quantity}</span></p>
+
+                <div class="buttons">
+                    <button onclick="increase(${index})">+</button>
+                    <button onclick="decrease(${index})">-</button>
+                    <button onclick="deleteItem(${index})">Delete</button>
+                </div>
+            </div>
+        </div>
+        `;
+    });
+
+    cartContainer.innerHTML += `
+        <p class="total">Total: $${total}</p>
+        <button class="checkout-btn" onclick="checkout()">Checkout</button>
+    `;
 }
 
-function add(button) {
-  let qty = button.parentElement.parentElement.querySelector(".qty");
-  qty.innerText = parseInt(qty.innerText) + 1;
-
-  updateTotal();
+function increase(index){
+    cart[index].quantity++;
+    updateCart();
 }
 
-function removeOne(button) {
-  let qty = button.parentElement.parentElement.querySelector(".qty");
-
-  if (parseInt(qty.innerText) > 1) {
-    qty.innerText = parseInt(qty.innerText) - 1;
-  }
-
-  updateTotal();
+function decrease(index){
+    if(cart[index].quantity > 1){
+        cart[index].quantity--;
+    } else {
+        cart.splice(index , 1);
+    }
+    updateCart();
 }
 
-function deleteItem(button) {
-  let item = button.closest(".item");
-  item.remove();
+function deleteItem(index){
+    cart.splice(index , 1);
+    updateCart();
+}
 
-  updateTotal();
+function updateCart(){
+    localStorage.setItem("cart" , JSON.stringify(cart));
+    displayCart();
 }
-function checkout() {
-    alert("Checkout completed successfully ✅");
+
+function checkout(){
+    alert("Checkout successful ✅");
+    localStorage.removeItem("cart");
+    cart = [];
+    displayCart();
 }
+
+// load cart on page open
+displayCart();
