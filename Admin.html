@@ -3,9 +3,300 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="CSS/global.css">
+    <link rel="stylesheet" href="CSS/admin.css">
+    <link rel="icon" href="https://thumbs.dreamstime.com/b/letter-ms-logo-hexagon-shape-colorful-background-combination-design-business-company-identity-203773397.jpg" type="image/jpg"/>
+    
     <title>Admin Panal</title>
 </head>
 <body>
     
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                <span>MS</span>
+                <h3>Mobile Store</h3>
+                </div>
+
+                <ul class="nav-links">
+                <li><a href="Home.html">Home</a></li>
+                <li><a href="Products.html">Products</a></li>
+                <li><a href="Accessories.html">Accessories</a></li>
+                </ul>
+
+                <div class="nav-auth">
+                <a href="Login.html" class="btn-login">Logout</a>
+                </div>
+
+            </div>
+        </nav>
+
+
+    <main class="main-area">
+
+        <section class="section-box">
+            <h2>Recent Orders</h2>
+
+            <table class="orders-table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Customer</th>
+                        <th>Product</th>
+                        <th>Qty</th>
+                        <th>Price</th>
+                        <th>Status</th>
+                        
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>01</td>
+                        <td>Ahmed Hassan</td>
+                        <td>iPhone 13 Pro</td>
+                        <td>1</td>
+                        <td>999 $</td>
+                        <td><span class="status new">New</span></td>
+                        
+                    </tr>
+
+                    <tr>
+                        <td>02</td>
+                        <td>Lina Karim</td>
+                        <td>Samsung Galaxy S23 Ultra</td>
+                        <td>1</td>
+                        <td>1199 $</td>
+                        <td><span class="status pending">Pending</span></td>                       
+                    </tr>
+
+                    <tr>
+                        <td>03</td>
+                        <td>Saud Al Rashid</td>
+                        <td>AirPods</td>
+                        <td>2</td>
+                        <td>100 $</td>
+                        <td><span class="status done">Completed</span></td>                       
+                    </tr>
+
+                    <tr>
+                        <td>04</td>
+                        <td>Mariam Adel</td>
+                        <td>Oppo Reno 14 Pro</td>
+                        <td>1</td>
+                        <td>1120 $</td>
+                        <td><span class="status new">New</span></td>                       
+                    </tr>
+
+                    <tr>
+                        <td>05</td>
+                        <td>Khalid Al Fahad</td>
+                        <td>Mobile Holder</td>
+                        <td>3</td>
+                        <td>225 $</td>
+                        <td><span class="status pending">Pending</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>06</td>
+                        <td>Reema Saeed</td>
+                        <td>HONOR 400 Pro</td>
+                        <td>1</td>
+                        <td>1200 $</td>
+                        <td><span class="status done">Completed</span></td>                       
+                    </tr>
+                </tbody>
+            </table>
+
+        </section>
+
+        <section class="section-box">
+            <h2>Manage Products</h2>
+
+            <div class="product-actions">
+
+                <div class="input-group">
+                    <label>Product Name</label>
+                    <input type="text" placeholder="Type product name">
+                </div>
+
+                <div class="input-group">
+                    <label>Price</label>
+                    <input type="number" placeholder="Product price">
+                </div>
+
+                <div class="input-group">
+                    <label>Image URL</label>
+                    <input type="text" placeholder="Product image link">
+                </div>
+
+                <button class="btn-add">➕ Add Product</button>
+            </div>
+
+            <h3 class="sub-title">Current Products</h3>
+
+            <table class="products-table">
+    <thead>
+        <tr>
+            <th>Product</th>
+            <th>Price</th>
+            <th>Image</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+
+    <tbody>
+
+            <tr>
+                <td>Airpods</td>
+                <td>$50</td>
+                <td><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_Gmlnyl7sO7lOQAG1hjOnHpUfxcmWuMDvPiH9XWlrUjdqIjFn511ozizS-IrWqrVONQY&usqp=CAU" class="product-img"></td>
+                <td>
+                    <button class="btn-small blue">Edit</button>
+                    <button class="btn-small red">Delete</button>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Mobile Holder</td>
+                <td>$75</td>
+                <td><img src="https://cdn.shopify.com/s/files/1/1603/9553/files/Portronics_Mobot_Clip_best_mobile_holder_online_480x480.webp?v=1722324305" class="product-img"></td>
+                <td>
+                    <button class="btn-small blue">Edit</button>
+                    <button class="btn-small red">Delete</button>
+                </td>
+            </tr>
+
+            <tr>
+                <td>iPhone 13 Pro</td>
+                <td>$999</td>
+                <td><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScYndP3MAUrzhRc61mZBIpqX50j0NLcSacpj1Sp4V_5K66N3pftnB2K1uH3kF0jtQT42I&usqp=CAU" class="product-img"></td>
+                <td>
+                    <button class="btn-small blue">Edit</button>
+                    <button class="btn-small red">Delete</button>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Samsung Galaxy S23</td>
+                <td>$899</td>
+                <td><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHe90tFwIomoDbcRZp36dEctYfaFUXDZCszriFjsNCQhbrGZK2Mshcpl7sU6eFV8jjShQ&usqp=CAU" class="product-img"></td>
+                <td>
+                    <button class="btn-small blue">Edit</button>
+                    <button class="btn-small red">Delete</button>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Google Pixel 7</td>
+                <td>$749</td>
+                <td><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGvf99JPwq47MUPKdvW7_pkxqIl9hi2blrjwN-FXoEnEArLGxM-lhzNaroVlDGctk-_zs&usqp=CAU" class="product-img"></td>
+                <td>
+                    <button class="btn-small blue">Edit</button>
+                    <button class="btn-small red">Delete</button>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Huawei Mate 60</td>
+                <td>$1099</td>
+                <td><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUBUhPSmMxkgSquLU66Tisf8H0n_mt6qHw_Q&s" class="product-img"></td>
+                <td>
+                    <button class="btn-small blue">Edit</button>
+                    <button class="btn-small red">Delete</button>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Samsung Galaxy S23 Ultra</td>
+                <td>$1199</td>
+                <td><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStHWm31jvrM36_cpSWPLJf469jG_nM3Qiw8vK4vm0Gm4cx2eK8qz-YgCn21SaR58l_zlg&usqp=CAU" class="product-img"></td>
+                <td>
+                    <button class="btn-small blue">Edit</button>
+                    <button class="btn-small red">Delete</button>
+                </td>
+            </tr>
+
+            <tr>
+                <td>realme 12 pro</td>
+                <td>$799</td>
+                <td><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSez1yhAwjsykABKuFKxp42fXaUYO149z378bFMrFYVQIan8IBH6l0kVlsIjrinvgCpKvc&usqp=CAU" class="product-img"></td>
+                <td>
+                    <button class="btn-small blue">Edit</button>
+                    <button class="btn-small red">Delete</button>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Oppo Reno 14 Pro</td>
+                <td>$1120</td>
+                <td><img src="https://cdn.shortpixel.ai/spai/q_glossy+ret_img+to_webp/mobizil.com/wp-content/uploads/2025/07/oppo-reno-14-pro-2.jpg" class="product-img"></td>
+                <td>
+                    <button class="btn-small blue">Edit</button>
+                    <button class="btn-small red">Delete</button>
+                </td>
+            </tr>
+
+            <tr>
+                <td>HONOR 400 Pro</td>
+                <td>$1200</td>
+                <td><img src="https://m.media-amazon.com/images/I/51xtK0mJw6L._AC_SX679_.jpg" class="product-img"></td>
+                <td>
+                    <button class="btn-small blue">Edit</button>
+                    <button class="btn-small red">Delete</button>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td>Headphone</td>
+                <td>$80</td>
+                <td><img src="https://www.tecq.in/wp-content/uploads/2025/09/A1-1-300x300.png" class="product-img"></td>
+                <td>
+                    <button class="btn-small blue">Edit</button>
+                    <button class="btn-small red">Delete</button>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+
+
+        </section>
+
+    </main>
+
+     <footer class="footer">
+        <div class="footer-container">
+            <div>
+            <div class="footer-logo">
+                <span>MS</span>
+                <h3>Mobile Store</h3>
+            </div>
+            <p style="color: var(--footer-mid); line-height: 1.6;">
+                Your trusted place for all mobile phones, accessories, repairs, and latest tech solutions.
+            </p>
+            </div>
+            <div>
+                <h4 class="footer-title">Quick Links</h4>
+                <div class="footer-links-row">
+                    <a href="Home.html">Home</a>
+                    <a href="#">Shop</a>
+                    <a href="#">Offers</a>
+                    <a href="#">Contact Us</a>
+                    <a href="#">About Us</a>
+                </div>
+            </div>
+
+        </div>
+        <div class="footer-bottom">
+            © 2025 Mobile Store. All Rights Reserved.
+        </div>
+    </footer>
+
+    <script src="JS/admin.js"></script>
 </body>
 </html>
