@@ -6,7 +6,7 @@ document.getElementById("loginForm").addEventListener("submit", function(e) {
 
   
   if (email === "user@gmail.com" && password === "1234") {
-    window.location.href = "Profile.html";
+    window.location.href = "Home.html";
   }else if(email === "admin@gmail.com" && password === "0000"){
     window.location.href = "Admin.html";
   }else {
