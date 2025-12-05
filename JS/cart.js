@@ -82,6 +82,9 @@ document.addEventListener("DOMContentLoaded", () => {
         localStorage.removeItem("cart");
         cart = [];
         displayCart();
+
+        window.location.href = "order.html";
+
     }
 
     // Load cart initially
