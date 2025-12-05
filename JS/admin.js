@@ -58,3 +58,42 @@ tableBody.addEventListener("click", (e) => {
         e.target.closest("tr").remove();
     }
 });
+
+
+const ordersTable = document.querySelector(".orders-table tbody");
+
+ordersTable.addEventListener("click", (e) => {
+    if (e.target.classList.contains("btn-update")) {
+        const row = e.target.closest("tr");
+        const statusCell = row.children[5];
+
+        // إنشاء قائمة اختيار للحالات
+        const select = document.createElement("select");
+        select.className = "status-select";
+
+        select.innerHTML = `
+            <option value="new">New</option>
+            <option value="pending">Pending</option>
+            <option value="done">Completed</option>
+        `;
+
+        const currentStatus = statusCell.querySelector("span").classList[1];
+        select.value = currentStatus;
+
+        statusCell.innerHTML = "";
+        statusCell.appendChild(select);
+
+        select.addEventListener("change", () => {
+            const newStatus = select.value;
+
+            statusCell.innerHTML =
+                `<span class="status ${newStatus}">${formatStatus(newStatus)}</span>`;
+        });
+    }
+});
+
+function formatStatus(status) {
+    if (status === "new") return "New";
+    if (status === "pending") return "Pending";
+    if (status === "done") return "Completed";
+}
