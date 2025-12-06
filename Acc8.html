@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lens Protector</title>
+     <link rel="stylesheet" href="global.css"> 
+     <link rel="stylesheet" href="Acc.css">
+     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+     <meta http-equiv="Pragma" content="no-cache">
+     <meta http-equiv="Expires" content="0">
+     <link rel="icon" href="https://thumbs.dreamstime.com/b/letter-ms-logo-hexagon-shape-colorful-background-company-identity-203773397.jpg" type="image/jpg"/>
+     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body> 
+    <nav class="navbar">
+      <div class="nav-container">
+        <div class="nav-logo">
+          <span>MS</span>
+          <h3>Mobile Store</h3>
+        </div>
+
+        <ul class="nav-links">
+          <li><a href="Home.html">Home</a></li>
+          <li><a href="Products.html">Products</a></li>
+          <li><a href="Accessories.html">Accessories</a></li>
+          <li><a href="Contact.html">Contact Us</a></li>
+          <li><a href="Profile.html">Profile</a></li>
+          <li><a href="Cart.html">Cart</a></li>
+        </ul>
+
+        <div class="nav-auth">
+          <a href="Login.html" class="btn-login">Logout</a>
+        </div>
+      </div>
+  </nav>
+  
+<br><br><br><br>
+
+<span id="product-name" title="phone name" class="product-name">Lens Protector for Samsung Galaxy S24 Ultra Camera</span>
+
+<div class="product-section" data-name="Lens Protector for Samsung Galaxy S24 Ultra Camera" data-hover-img="https://i.ibb.co/NbgzRtb/dc757f1e-c724-4115-86f1-de409dd5ec7b-removebg-preview.png">
+  <div class="image-container">
+    <img id="product-image" src="https://i.ibb.co/dwz154C8/098f3b43-93e6-4a67-b194-78ba15086bde-removebg-preview.png" alt="Accessory photo" title="Accessory photo" class="custom-image"
+         onmouseover="this.src='https://i.ibb.co/NbgzRtb/dc757f1e-c724-4115-86f1-de409dd5ec7b-removebg-preview.png'"
+         onmouseout="this.src= 'https://i.ibb.co/dwz154C8/098f3b43-93e6-4a67-b194-78ba15086bde-removebg-preview.png'">
+  </div>
+
+  <div class="text-box">
+    <div class="product-details">
+      <strong>Price</strong>
+      <b>
+        <span title="original price" style="text-decoration: line-through; color: gray; margin-right: 10px;">EGP 750.00</span>
+        <span title="discounted price" style="color:  #070a10; font-weight: bold;">EGP 699.00</span>
+      </b>
+    </div>
+
+    <div class="message">
+      <span class="cart" title="Go to cart page">
+        <button type="button" class="add" onclick="addToCart()">
+          <span class="material-icons">shopping_cart</span> Add To Cart
+        </button>
+      </span>
+
+      <div class="popup" id="popup">
+        <img src="https://i.postimg.cc/Bnsg5bDd/photo-2025-05-03-01-21-22-removebg-preview.png" alt="success">
+        <span class="success">Success</span>
+        <p>This item has been added to your cart successfully!</p>
+        <button type="button" onclick="closePopup()">Close</button>
+        <a href="basket.html"><button type="button">Go To Cart</button></a>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+
+    <script>
+      function addToCart() {
+        const product = {
+          id: 9,
+          name: "Liberty 4 NC Earbuds",
+          price: 350,
+          image: "https://i.ibb.co/9kDXdQFm/76efbb05-f6bb-4103-86fb-2fca4150b507-removebg-preview.png",
+          quantity: 1
+        };
+
+        let basket = JSON.parse(localStorage.getItem('basket')) || [];
+        const existingProduct = basket.find(p => p.id === product.id);
+
+        if (existingProduct) {
+          existingProduct.quantity += 1;
+        } else {
+          basket.push(product);
+        }
+
+        localStorage.setItem("basket", JSON.stringify(basket));
+        openPopup();
+      }
+
+      function goToCart() { window.location.href = "basket.html"; }
+    </script>
+  </div>
+</div>
+
+<div class="description-title"> <span title="Product details"> <b>Specifications</b> </span> </div>
+<div class="bouquet-description"></div>
+
+<div class="specs" role="region" aria-label="Product specifications">
+ <!-- Specs two-column block -->
+    <div class="specs">
+      <table class="specs-table">
+        <tbody>
+          <!--<tr><td class="spec-label">Product Weight</td><td class="spec-value">215 g</td></tr>
+        -->
+          <tr><td class="spec-label">Material</td><td class="spec-value">Tempered Glass</td></tr>
+          <tr><td class="spec-label">What's In The Box</td><td class="spec-value">Armorite Camera Lens Protectors</td></tr>
+          <!--<tr><td class="spec-label">Product Length</td><td class="spec-value">108 mm</td></tr>
+          <tr><td class="spec-label">Audio Jack</td><td class="spec-value">Type-C</td></tr>
+          <tr><td class="spec-label">Audio Headphone Type</td><td class="spec-value">In-Ear</td></tr>
+        -->
+          <tr><td class="spec-label">Number of pieces</td><td class="spec-value">1</td></tr>
+        </tbody>
+      </table>
+
+      <table class="specs-table">
+        <tbody>
+          <tr><td class="spec-label">Model Name</td><td class="spec-value">Armorite Camera Lens Protector</td></tr>
+         <!---- <tr><td class="spec-label">Model Number</td><td class="spec-value">A3947, A3947H31, A3947Z31, A3947G31</td></tr>
+          <tr><td class="spec-label">Feature</td><td class="spec-value">Active Noise Cancellation, Bluetooth, Water Resistant, Volume Control</td></tr>
+          <tr><td class="spec-label">What's In The Box</td><td class="spec-value">Earphones, Charging case, 4 pairs of eartips (XS, S, M, L), Type C Connector x 1, Multiple Language QSG x 1, Safety Card x 1</td></tr>
+        -->
+          <tr><td class="spec-label">Country of Origin</td><td class="spec-value">China</td></tr>
+          <tr><td class="spec-label">Colour Name</td><td class="spec-value">silver</td></tr>
+        <!-- <tr><td class="spec-label">Usage Type</td><td class="spec-value">Sports & Fitness</td></tr>-->
+        </tbody>
+      </table>
+    </div>
+</div>
+
+<span class="reviews-title" title="customer reviews"> Customer Reviews </span>
+<div class="reviews" style="margin-top: 60px;">
+  <div class="review-item">
+    <div>
+      <span class="customer-names"><b>Hesham Mahmmoud</b></span>
+      <span class="verified">verified customer</span>
+      <span class="rating"> Rating:⭐⭐⭐⭐⭐</span>
+    </div>
+    <div class="review">"The product is very good ."</div>
+  </div>
+
+  <div class="review-item">
+    <div>
+      <span class="customer-names"><b>Donia Othman</b></span>
+      <span class="verified">verified customer</span>
+      <span class="rating"> Rating:⭐⭐⭐</span>
+    </div>
+    <div class="review">"
+it is good as expected."</div>
+  </div>
+
+  <div class="review-item">
+    <div>
+      <span class="customer-names"><b>Mai Akram</b></span>
+      <span class="verified">verified customer</span>
+      <span class="rating"> Rating:⭐</span>
+    </div>
+    <div class="review">"Product did not meet my expectations."</div>
+  </div>
+</div>       
+
+<script>
+    const popup = document.getElementById("popup");
+
+    function openPopup() {
+        popup.classList.add("open-popup");
+    }
+
+    function closePopup() {
+        popup.classList.remove("open-popup");
+    }
+</script>
+
+<br>
+<footer class="footer">
+  <div class="footer-container">
+    <div>
+      <div class="footer-logo">
+        <span>MS</span>
+        <h3>Mobile Store</h3>
+      </div>
+      <p style="color: var(--footer-mid); line-height: 1.6;">
+          Your trusted place for all mobile phones, accessories, repairs, and latest tech solutions.
+      </p>
+    </div>
+    <div>
+      <h4 class="footer-title">Quick Links</h4>
+      <div class="footer-links-row">
+          <a href="Home.html">Home</a>
+          <a href="#">Shop</a>
+          <a href="#">Offers</a>
+          <a href="#">Contact Us</a>
+          <a href="#">About Us</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+      © 2025 Mobile Store. All Rights Reserved.
+  </div>
+</footer>
+
+</body>
+</html>
