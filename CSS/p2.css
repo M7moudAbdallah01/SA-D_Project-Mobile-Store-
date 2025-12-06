@@ -409,13 +409,13 @@
 }
 
 .spec-label {
-  color: #6b7280; /* muted label */
+  color: #6b7280; 
   width: 55%;
   font-weight: 600;
 }
 
 .spec-value {
-  color: #111827; /* value color */
+  color: #111827; 
   width: 45%;
 }
 
@@ -423,9 +423,3 @@
   .specs { grid-template-columns: 1fr; }
 }
 
-/* Utility: box for forcing breakable text (applies to pages using p1.css) */
-.box {
-  max-width: 200px;
-  overflow-wrap: break-word;
-  word-break: break-all;
-}
