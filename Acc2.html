@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galaxy SmartTag2  </title>
+     <link rel="stylesheet" href="global.css"> 
+  <link rel="stylesheet" href="Acc.css">
+    
+      <link rel="icon" href="https://thumbs.dreamstime.com/b/letter-ms-logo-hexagon-shape-colorful-background-company-identity-203773397.jpg" type="image/jpg"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- debug styles removed -->
+</head>
+<body> 
+    <nav class="navbar">
+      <div class="nav-container">
+        <div class="nav-logo">
+          <span>MS</span>
+          <h3>Mobile Store</h3>
+        </div>
+
+        <ul class="nav-links">
+          <li><a href="Home.html">Home</a></li>
+          <li><a href="Products.html">Products</a></li>
+          <li><a href="Accessories.html">Accessories</a></li>
+          <li><a href="Contact.html">Contact Us</a></li>
+          <li><a href="Profile.html">Profile</a></li>
+          <li><a href="Cart.html">Cart</a></li>
+        </ul>
+
+        <div class="nav-auth">
+          <a href="Login.html" class="btn-login">Logout</a>
+        </div>
+
+      </div>
+  </nav>
+  
+
+
+<br>
+<br>
+<br>
+<br>
+    <span id="product-name" title="phone name" class="product-name">Galaxy SmartTag2</span>
+
+    <div class="product-section" data-name="Galaxy SmartTag2" data-price="EGP 1199.00" data-img="https://i.ibb.co/STYcFCy/42abb7e9-86c4-4776-b0a0-873cfe7a179b-removebg-preview.png" data-hover-img="https://i.ibb.co/zVY1s0LG/e8c8ca1e-b610-4da1-8231-4c7362ab03ef-removebg-preview.png">
+      <div class="image-container">
+        <img id="product-image" src="https://i.ibb.co/STYcFCy/42abb7e9-86c4-4776-b0a0-873cfe7a179b-removebg-preview.png" alt="Accessory photo" title="Accessory photo" class="custom-image"
+         onmouseover="this.src='https://i.ibb.co/zVY1s0LG/e8c8ca1e-b610-4da1-8231-4c7362ab03ef-removebg-preview.png'"
+         onmouseout="this.src='https://i.ibb.co/STYcFCy/42abb7e9-86c4-4776-b0a0-873cfe7a179b-removebg-preview.png'">
+      </div>
+
+      <div class="text-box">
+        <div class="product-details">
+          <strong>Price</strong>
+          <b><span id="price" title="price">EGP 1199.00.00</span></b>
+        </div>
+
+        <div class="message">
+          <span class="cart" title="Go to cart page">
+            <button type="button" class="add" onclick="addToCart()">
+              <span class="material-icons">shopping_cart</span> Add To Cart
+            </button>
+          </span>
+
+          <div class="popup" id="popup">
+            <img src="https://i.postimg.cc/Bnsg5bDd/photo-2025-05-03-01-21-22-removebg-preview.png" alt="success">
+            <span class="success">Success</span>
+            <p>This item has been added to your cart successfully!</p>
+            <button type="button" onclick="closePopup()">Close</button>
+            <a href="basket.html"><button type="button">Go To Cart</button></a>
+          </div>
+        </div>
+
+        <script src="script.js"></script>
+        <script>
+          function addToCart() {
+            const product = {
+              id: 9,
+              name: "Bloom Vessel",
+              price: 1000,
+              image: "https://postimg.cc/Wh5KFJL7",
+              quantity: 1
+            };
+            let basket = JSON.parse(localStorage.getItem('basket')) || [];
+            const existingProduct = basket.find(p => p.id === product.id);
+            if (existingProduct) {
+              existingProduct.quantity += 1;
+            } else {
+              basket.push(product);
+            }
+            localStorage.setItem("basket", JSON.stringify(basket));
+            openPopup();
+          }
+          function goToCart() { window.location.href = "basket.html"; }
+          // openPopup/closePopup are implemented in script.js as well
+        </script>
+      </div>
+    </div>
+         
+    <div class="description-title"> <span title="Product details"> <b>Specifications</b> </span> </div>
+    <div class="bouquet-description"></div>
+
+    <!-- Specs two-column block (clean, accessible) -->
+    <div class="specs" role="region" aria-label="Product specifications">
+      <div class="spec-column">
+        <table class="specs-table">
+          <tbody>
+            <tr><th scope="row">Material</th><td>Plastic</td></tr>
+            <tr><th scope="row">Connection Type	</th><td>Bluetooth</td></tr>
+            <tr><th scope="row">Model Number</th><td>EI-T5600BWEGWW</td></tr>
+            <tr><th scope="row">Number of pieces	</th><td>2</td></tr>
+            <tr><th scope="row">Model Compatibility	</th><td>Samsung</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <!--
+      <div class="spec-column">
+        <table class="specs-table">
+          <tbody>
+            <tr><th scope="row">Screen Size</th><td>6.7 in</td></tr>
+            <tr><th scope="row">SIM Type</th><td>Nano SIM</td></tr>
+            <tr><th scope="row">Internal Memory</th><td>64 GB</td></tr>
+            <tr><th scope="row">RAM</th><td>4 GB</td></tr>
+            <tr><th scope="row">Display Type</th><td>LCD</td></tr>
+          -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+   <span class = "reviews-title" title="customer reviews"> Customer Reviews </span>
+   <div class="reviews" style="margin-top: 60px;">
+    <div class="review-item">
+      <div>
+        <span class="customer-names"><b>Ganna Mohammed</b></span>
+        <span class="verified">verified customer</span>
+        <span class="rating"> Rating:⭐⭐⭐</span>
+      </div>
+      <div class="review">"The product is original and in good condition..."</div>
+    </div>
+
+    <div class="review-item">
+      <div>
+        <span class="customer-names"><b>Sama Adel</b></span>
+        <span class="verified">verified customer</span>
+        <span class="rating"> Rating:⭐⭐⭐⭐</span>
+      </div>
+      <div class="review">"Everything is okay as expected, except for the finishing of the body.
+."</div>
+    </div>
+
+    <div class="review-item">
+      <div>
+        <span class="customer-names"><b>Amal Basem</b></span>
+        <span class="verified">verified customer</span>
+        <span class="rating"> Rating:⭐⭐⭐⭐</span>
+      </div>
+      <div class="review">"Original
+Thank God, it turned out to be original and compatible with the device directly.."</div>
+    </div>
+
+   </div>       
+   
+            
+<script>
+    const popup = document.getElementById("popup");
+
+    function openPopup() {
+        popup.classList.add("open-popup");
+    }
+
+    function closePopup() {
+        popup.classList.remove("open-popup");
+    }
+</script>
+
+<br>
+ <footer class="footer">
+        <div class="footer-container">
+            <div>
+            <div class="footer-logo">
+                <span>MS</span>
+                <h3>Mobile Store</h3>
+            </div>
+            <p style="color: var(--footer-mid); line-height: 1.6;">
+                Your trusted place for all mobile phones, accessories, repairs, and latest tech solutions.
+            </p>
+            </div>
+            <div>
+                <h4 class="footer-title">Quick Links</h4>
+                <div class="footer-links-row">
+                    <a href="Home.html">Home</a>
+                    <a href="#">Shop</a>
+                    <a href="#">Offers</a>
+                    <a href="#">Contact Us</a>
+                    <a href="#">About Us</a>
+                </div>
+            </div>
+
+        </div>
+        <div class="footer-bottom">
+            © 2025 Mobile Store. All Rights Reserved.
+        </div>
+    </footer>
+
+</body>
+            </html>
