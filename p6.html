@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>400 LITE Dual SIM Velvet Black 5G details page  </title> 
+  <link rel="stylesheet" href="CSS/p2.css">
+  <link rel="stylesheet" href="CSS/global.css">
+      <link rel="icon" href="https://thumbs.dreamstime.com/b/letter-ms-logo-hexagon-shape-colorful-background-company-identity-203773397.jpg" type="image/jpg"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+     <link rel="stylesheet" href="global.css">
+</head>
+<body> 
+    <nav class="navbar">
+      <div class="nav-container">
+        <div class="nav-logo">
+          <span>MS</span>
+          <h3>Mobile Store</h3>
+        </div>
+
+        <ul class="nav-links">
+          <li><a href="Home.html">Home</a></li>
+          <li><a href="phones.html">Products</a></li>
+          <li><a href="Contact_Us.html">Contact Us</a></li>
+          <li><a href="order.html">Payment</a></li>
+          <li><a href="Cart.html">Cart</a></li>
+        </ul>
+
+        <div class="nav-auth">
+          <a href="Login.html" class="btn-login">Logout</a>
+        </div>
+
+      </div>
+  </nav>
+
+<br>
+<br>
+<br>
+<br>
+    <span title="phone name" class ="product-name">400 LITE Dual SIM Velvet Black 5G </span> 
+ 
+    <div class="text-box">
+ <div class="product-details"><pre> 
+    <strong >Price</strong>      <b>  <span title="price">EGP 12555.00</span></b>  </div>     </pre>
+ <div class="message">                      
+ <span class="cart" title = "Go to cart page " >   <button type="submit" class="add" onclick="addToCart()" >  <span class="material-icons">
+       shopping_cart</span>  Add To Cart  </button> </span>
+            <div class="popup" id="popup">
+              <img src="https://i.postimg.cc/Bnsg5bDd/photo-2025-05-03-01-21-22-removebg-preview.png">
+
+            <span class="success" > Success </span>
+           
+              <p>This Item Has Been Add To Your Cart , Successfully!</p>
+              <button type="button" onclick="closePopup()" > Close </button>
+               <a href="basket.html">
+                <button type="button" > Go To Cart</button> </a>
+              </div>
+            </div>
+           <script src="script.js"></script>
+        <script>
+           function addToCart(){ 
+                const product={
+               id: 9,
+name: "Bloom Vessel",
+price: 1000,
+image: "https://postimg.cc/Wh5KFJL7",
+quantity: 1
+                };
+                let basket = JSON.parse(localStorage.getItem('basket')) || [];
+                const existingProduct = basket.find(p => p.id === product.id);
+                if(existingProduct){
+                  existingProduct.quantity += 1;
+                } else{
+                  basket.push(product);
+                }
+            localStorage.setItem("basket",JSON.stringify(basket));
+           
+           openPopup();
+            }
+            function goToCart(){
+                window.location.href ="basket.html";
+            }
+            function openPopup(){
+                document.getElementById("popup").classList.add("open-popup");
+            }
+           function closePopup()
+           {
+              document.getElementById("popup").classList.remove("open-popup");
+
+           } 
+        
+           </script>
+           
+ </div> 
+    <div class="image-container">
+       <img src ="https://i.postimg.cc/zL1JtLf5/49e4af48-4e29-4a81-8f9e-0271710e269e-removebg-preview.png" alt="phone photo  " title ="phone photo" width="200" height="200" class=" custom-image"
+        onmouseover="this.src='https://i.postimg.cc/kXDrzcxh/42351047-e8c2-4900-b18b-90251c1168ec-removebg-preview.png'"
+         onmouseout="this.src='https://i.postimg.cc/zL1JtLf5/49e4af48-4e29-4a81-8f9e-0271710e269e-removebg-preview.png'"> <br>
+            </div>
+         
+         
+           
+           </div>
+            <div class="description-title"> <span title="Product details"> <b> Specifications</b> </span> </div>
+            <div class="bouquet-description" >
+       
+   </div> 
+   
+    <!-- Specs two-column block -->
+    <div class="specs">
+      <table class="specs-table">
+        <tbody>
+          <tr><td class="spec-label">Expandable Memory Type</td><td class="spec-value">No Expandable Memory</td></tr>
+          <tr><td class="spec-label">SIM Count</td><td class="spec-value">Dual SIM</td></tr>
+          <tr><td class="spec-label">RAM Size</td><td class="spec-value">4 GB</td></tr>
+          <tr><td class="spec-label">Internal Memory</td><td class="spec-value">64 GB</td></tr>
+          <tr><td class="spec-label">Version</td><td class="spec-value">Middle East Version</td></tr>
+          <tr><td class="spec-label">Display Resolution</td><td class="spec-value">1080x2400</td></tr>
+          <tr><td class="spec-label">Display Type</td><td class="spec-value">LCD</td></tr>
+        </tbody>
+      </table>
+
+      <table class="specs-table">
+        <tbody>
+          <tr><td class="spec-label">Secondary Camera Resolution</td><td class="spec-value">13 MP</td></tr>
+          <tr><td class="spec-label">Secondary Camera</td><td class="spec-value">12 - 15.9 MP</td></tr>
+          <tr><td class="spec-label">Battery Size</td><td class="spec-value">5000 mAh</td></tr>
+          <tr><td class="spec-label">Screen Size</td><td class="spec-value">6.7 in</td></tr>
+          <tr><td class="spec-label">SIM Type</td><td class="spec-value">Nano SIM</td></tr>
+          <tr><td class="spec-label">Colour Name</td><td class="spec-value">Velvet Black</td></tr>
+          <tr><td class="spec-label">Display Resolution Type</td><td class="spec-value">HD</td></tr>
+        </tbody>
+      </table>
+    </div>
+   <span class = "reviews-title" title="customer reviews"> Customer Reviews </span>
+   <div class="reviews" style="margin-top: 60px;">
+    <table>
+  <tr>
+   <span class="customer-names"><b>  Ali Ahmed</b></span>
+    <span class="verified" >verified customer</span>
+    <span class="rating" > Rating:⭐️⭐️⭐️⭐️</span>
+      <span class = "review" > 
+"Product look
+This product is perfect under display fingerprint have a side camera action button zoom in out have this button same iPhone 16!"
+   
+</span> </tr>
+<tr>
+<span class="customer-names"><b>Kholoud  amir </b></span>
+<span class="verified" >verified customer</span>
+ <span class="rating" > Rating:⭐️⭐️⭐️⭐️</span>
+<span class = "review" > 
+"This mobile is great and awesome
+This mobile is great and awesome that I can't believe before I buy it"
+</span></tr>
+<tr>
+ <span class="customer-names"><b>Dalia Samir</b></span>
+<span class="verified" >verified customer</span>
+ <span class="rating" > Rating:⭐️⭐️⭐️⭐️</span>
+<span class = "review" > 
+"looking just wow
+camera quality awesome looking just  iPhone style "
+
+
+</span></tr>
+</table>
+
+ </div>       
+   
+            
+
+<br>
+ <footer class="footer">
+        <div class="footer-container">
+            <div>
+            <div class="footer-logo">
+                <span>MS</span>
+                <h3>Mobile Store</h3>
+            </div>
+            <p style="color: var(--footer-mid); line-height: 1.6;">
+                Your trusted place for all mobile phones, accessories, repairs, and latest tech solutions.
+            </p>
+            </div>
+            <div>
+                <h4 class="footer-title">Quick Links</h4>
+                <div class="footer-links-row">
+                    <a href="Home.html">Home</a>
+                    <a href="#">Shop</a>
+                    <a href="#">Offers</a>
+                    <a href="#">Contact Us</a>
+                    <a href="#">About Us</a>
+                </div>
+            </div>
+
+        </div>
+        <div class="footer-bottom">
+            © 2025 Mobile Store. All Rights Reserved.
+        </div>
+    </footer>
+
+</body>
+            </html>
+
+           

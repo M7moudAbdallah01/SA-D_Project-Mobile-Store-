@@ -221,3 +221,35 @@
     font-size: 0.9rem;
     color: #333;
 }
+/* زرار Add to Cart */
+.add-to-cart {
+    background-color: #18df46; /* أخضر جذاب */
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 16px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 14px;
+}
+
+/* تأثير عند المرور بالماوس */
+.add-to-cart:hover {
+    background-color: #12b536;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
+
+/* تأثير عند الضغط */
+.add-to-cart:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+/* تنسيق الزرار داخل البطاقة */
+.product-card .add-to-cart {
+    margin-top: 10px;
+   /* / width: 100%; */
+    text-align: center;
+}

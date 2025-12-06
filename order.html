@@ -1,96 +1,176 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Order - Phone Store</title>
-  <link rel="stylesheet" href="CSS/order-style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Orders - Mobile Store</title>
+    <link rel="stylesheet" href="CSS/global.css">
+    <link rel="stylesheet" href="CSS/order-style.css">
+    <link rel="icon" href="https://thumbs.dreamstime.com/b/letter-ms-logo-hexagon-shape-colorful-background-combination-design-business-company-identity-203773397.jpg" type="image/jpg"/>
+
 </head>
 <body>
-  <div class="container">
-    <header>
-      <div class="brand">
-        <div class="logo">TP</div>
-        <div>
-          <div class="brand-title">Phone Store</div>
-          <div class="muted">Latest smartphones — Fast delivery</div>
-        </div>
+
+
+<nav class="navbar">
+<div class="nav-container">
+  <div class="nav-logo"><span>MS</span><h3>Mobile Store</h3></div>
+  <ul class="nav-links">
+    <li><a href="Home.html">Home</a></li>
+    <li><a href="phones.html">Products</a></li>
+    <li><a href="Contact_Us.html">Contact Us</a></li>
+    <li><a href="order.html">Payment</a></li>
+    <li><a href="Cart.html">Cart</a></li>
+  </ul>
+  <div class="nav-auth"><a href="Login.html" class="btn-login">Logout</a></div>
+</div>
+</nav>
+
+
+<div class="main-container">
+
+  
+  <div class="header-section">
+    <div class="welcome-section">
+      
+        
+      <div class="welcome-text">
+        <h2 id="welcome-username">Welcome, Guest User!</h2>
+        <p id="welcome-email">Here are your current orders</p>
       </div>
-      <nav>
-        <a href="index.html">Home</a>
-        <a href="products.html">Products</a>
-        <a href="cart.html">Cart</a>
-        <a href="contact.html">Contact</a>
-      </nav>
-    </header>
-
-    <main>
-      <section class="card">
-        <h1>Order Form</h1>
-        <p class="muted">Enter customer details, choose products, and submit your order.</p>
-
-        <form id="orderForm" onsubmit="return submitOrder(event)">
-          <div class="row">
-            <div>
-              <label>Full Name</label>
-              <input type="text" id="name" required placeholder="Your name here" />
-            </div>
-            <div>
-              <label>Phone Number</label>
-              <input type="tel" id="phone" required placeholder="01xxxxxxxx" />
-            </div>
-          </div>
-
-          <div class="row">
-            <div>
-              <label>Email</label>
-              <input type="email" id="email" placeholder="example@mail.com" />
-            </div>
-            <div>
-              <label>Payment Method</label>
-              <select id="payment">
-                <option value="cash">Cash on Delivery</option>
-                <option value="card">Credit Card</option>
-                <option value="wallet">Mobile Wallet</option>
-              </select>
-            </div>
-          </div>
-
-          <label>Address (Delivery Details)</label>
-          <textarea id="address" placeholder="Street, area, city..."></textarea>
-
-          <hr />
-
-          <h3>Select Products</h3>
-          <div id="products"></div>
-
-          <div class="btns">
-            <button type="button" class="btn ghost" onclick="resetSelection()">Clear</button>
-            <button type="submit" class="btn">Submit Order</button>
-          </div>
-        </form>
-      </section>
-
-      <aside class="card summary">
-        <h3>Order Summary</h3>
-        <div id="summaryList"></div>
-        <div class="line">
-          <div>Subtotal</div>
-          <div id="subtotal">0 EGP</div>
-        </div>
-        <div class="line">
-          <div>Delivery Fee</div>
-          <div id="delivery">0 EGP</div>
-        </div>
-        <div class="line total">
-          <div>Total</div>
-          <div id="grandTotal">0 EGP</div>
-        </div>
-        <div class="note">Review your order before confirming. You will receive a confirmation message.</div>
-      </aside>
-    </main>
+    </div>
+    <h1>📋 My Orders</h1>
+    <p>Manage and review your current orders</p>
   </div>
 
-  <script src="order-script.js"></script>
+  
+  <div id="no-orders" class="no-orders">
+    <span class="material-icons">shopping_bag</span>
+    <h3>No Orders Yet</h3>
+    
+    <a href="phones.html" class="shop-btn"> Browse Products</a>
+  </div>
+
+  <div id="has-orders" style="display:none;">
+    <div class="orders-content">
+      <div class="orders-list">
+        <div class="order-header">
+          <h2>Your Order Items</h2>
+          <span id="order-count" class="order-count">0 items</span>
+        </div>
+        <div id="orders-list-container"></div>
+        <div class="actions-section">
+          <button onclick="clearAllOrders()" class="clear-all-btn"><span class="material-icons">delete_sweep</span> Clear All</button>
+          <button onclick="proceedToCheckout()" class="checkout-btn"><span class="material-icons">payment</span> Proceed to Checkout</button>
+        </div>
+      </div>
+
+      
+      <div class="customer-info-sidebar">
+        <div class="customer-avatar">
+          <span class="material-icons">account_circle</span>
+          <div>
+            <h4 id="sidebar-username">Guest Customer</h4>
+            <p id="sidebar-email">guest@example.com</p>
+          </div>
+        </div>
+        <h3>📞 Contact Information</h3>
+        <div id="customer-info"></div>
+        <div class="order-summary">
+          <h3>💰 Order Summary</h3>
+          <div id="order-summary-details"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  <div id="address-section" class="section-box">
+    <h2 class="section-title">📦 Shipping Address</h2>
+    <div class="form-grid">
+      <input id="fullName" class="input-field" type="text" placeholder="Full Name">
+      <input id="phone" class="input-field" type="text" placeholder="Phone Number">
+      <input id="city" class="input-field" type="text" placeholder="City">
+      <input id="street" class="input-field" type="text" placeholder="Street Name">
+      <textarea id="notes" class="input-field textarea-field" placeholder="Additional Notes"></textarea>
+    </div>
+    <p id="address-error" style="color:red; display:none;">⚠️ Please fill all fields correctly.</p>
+    <button id="saveAddress" class="success-btn">Save Address</button>
+  </div>
+
+  
+  <div id="payment-section" class="section-box" style="pointer-events:none; opacity:0.4;">
+    <h2 class="section-title">💳 Make Payment</h2>
+    <p class="section-desc">Choose your preferred payment method:</p>
+    <div class="payment-options">
+      <label class="payment-option"><input type="radio" name="payment" value="wallet"> Payment Wallet</label>
+      <label class="payment-option"><input type="radio" name="payment" value="cash"> Cash Payment</label>
+      <label class="payment-option"><input type="radio" name="payment" value="credit"> Credit Card Payment</label>
+    </div>
+    <div id="credit-info" class="credit-info">
+      <input class="input-field" type="text" placeholder="Card Number">
+      <input class="input-field" type="text" placeholder="Card Holder Name">
+      <div class="form-two">
+        <input class="input-field" type="text" placeholder="MM/YY">
+        <input class="input-field" type="text" placeholder="CVV">
+      </div>
+    </div>
+    <button class="primary-btn">Complete Payment</button>
+  </div>
+
+</div>
+
+
+<footer class="footer">
+  <div class="footer-container">
+    <div>
+      <div class="footer-logo"><span>MS</span><h3>Mobile Store</h3></div>
+      <p>Your trusted place for all mobile phones, accessories, repairs, and latest tech solutions.</p>
+    </div>
+    <div>
+      <h4>Quick Links</h4>
+      <div class="footer-links-row">
+        <a href="Home.html">Home</a>
+        <a href="phones.html">Products</a>
+        <a href="Contact_Us.html">Contact Us</a>
+        <a href="#">About Us</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2025 Mobile Store. All Rights Reserved.</div>
+</footer>
+
+<script>
+
+const fields = Array.from(document.querySelectorAll("#address-section input, #address-section textarea, #payment-section input"));
+fields.forEach((f,i)=>f.addEventListener("keydown",(e)=>{ if(e.key==="Enter"){ e.preventDefault(); const next=fields[i+1]; if(next) next.focus(); }}));
+
+
+document.getElementById("saveAddress").addEventListener("click",()=>{
+  const name=document.getElementById("fullName").value.trim();
+  const phone=document.getElementById("phone").value.trim();
+  const city=document.getElementById("city").value.trim();
+  const street=document.getElementById("street").value.trim();
+  const notes=document.getElementById("notes").value.trim();
+  const errorMsg=document.getElementById("address-error");
+  const phonePattern=/^(010|011|012|015)[0-9]{8}$/;
+  if(!name||!phonePattern.test(phone)||!city||!street||!notes){ errorMsg.style.display="block"; return; }
+  errorMsg.style.display="none";
+  const paymentSection=document.getElementById("payment-section");
+  paymentSection.style.pointerEvents="auto";
+  paymentSection.style.opacity="1";
+  alert("✔ Address Saved Successfully!");
+});
+
+
+const radios=document.querySelectorAll("input[name='payment']");
+const creditInfo=document.getElementById("credit-info");
+const creditInputs=creditInfo.querySelectorAll("input");
+radios.forEach(r=>r.addEventListener("change",()=>{
+  if(r.value==="credit"){ creditInfo.style.display="block"; creditInputs.forEach(i=>i.required=true); }
+  else{ creditInfo.style.display="none"; creditInputs.forEach(i=>i.required=false); }
+}));
+</script>
+
 </body>
 </html>
