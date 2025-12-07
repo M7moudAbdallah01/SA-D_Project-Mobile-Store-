@@ -1,11 +1,12 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Orders - Mobile Store</title>
-    <link rel="stylesheet" href="CSS/global.css">
-    <link rel="stylesheet" href="CSS/order-style.css">
+    <link rel="stylesheet" href="global.css">
+    <link rel="stylesheet" href="order-style.css">
     <link rel="icon" href="https://thumbs.dreamstime.com/b/letter-ms-logo-hexagon-shape-colorful-background-combination-design-business-company-identity-203773397.jpg" type="image/jpg"/>
 
 </head>
@@ -69,22 +70,15 @@
         </div>
         <div id="orders-list-container"></div>
         <div class="actions-section">
-          <button onclick="clearAllOrders()" class="clear-all-btn"><span class="material-icons">delete_sweep</span> Clear All</button>
-          <button onclick="proceedToCheckout()" class="checkout-btn"><span class="material-icons">payment</span> Proceed to Checkout</button>
+          <button onclick="clearAllOrders()" class="clear-all-btn"> Clear All</button>
+        
         </div>
       </div>
 
       
       <div class="customer-info-sidebar">
-        <div class="customer-avatar">
-          <span class="material-icons">account_circle</span>
-          <div>
-            <h4 id="sidebar-username">Guest Customer</h4>
-            <p id="sidebar-email">guest@example.com</p>
-          </div>
-        </div>
-        <h3>📞 Contact Information</h3>
-        <div id="customer-info"></div>
+        
+       
         <div class="order-summary">
           <h3>💰 Order Summary</h3>
           <div id="order-summary-details"></div>
@@ -93,7 +87,8 @@
     </div>
   </div>
 
-  
+<br>
+
   <div id="address-section" class="section-box">
     <h2 class="section-title">📦 Shipping Address</h2>
     <div class="form-grid">
@@ -108,7 +103,7 @@
   </div>
 
   
-  <div id="payment-section" class="section-box" style="pointer-events:none; opacity:0.4;">
+  <div id="payment-section" class="section-box" >
     <h2 class="section-title">💳 Make Payment</h2>
     <p class="section-desc">Choose your preferred payment method:</p>
     <div class="payment-options">
@@ -124,7 +119,8 @@
         <input class="input-field" type="text" placeholder="CVV">
       </div>
     </div>
-    <button class="primary-btn">Complete Payment</button>
+    <button class="primary-btn" id="completePayment">Complete Payment</button>
+
   </div>
 
 </div>
@@ -155,22 +151,39 @@ const fields = Array.from(document.querySelectorAll("#address-section input, #ad
 fields.forEach((f,i)=>f.addEventListener("keydown",(e)=>{ if(e.key==="Enter"){ e.preventDefault(); const next=fields[i+1]; if(next) next.focus(); }}));
 
 
-document.getElementById("saveAddress").addEventListener("click",()=>{
-  const name=document.getElementById("fullName").value.trim();
-  const phone=document.getElementById("phone").value.trim();
-  const city=document.getElementById("city").value.trim();
-  const street=document.getElementById("street").value.trim();
-  const notes=document.getElementById("notes").value.trim();
-  const errorMsg=document.getElementById("address-error");
-  const phonePattern=/^(010|011|012|015)[0-9]{8}$/;
-  if(!name||!phonePattern.test(phone)||!city||!street||!notes){ errorMsg.style.display="block"; return; }
-  errorMsg.style.display="none";
-  const paymentSection=document.getElementById("payment-section");
-  paymentSection.style.pointerEvents="auto";
-  paymentSection.style.opacity="1";
-  alert("✔ Address Saved Successfully!");
-});
 
+const saveBtn = document.getElementById("saveAddress");
+
+saveBtn.addEventListener("click", () => {
+    const name = document.getElementById("fullName").value.trim();
+    const phone = document.getElementById("phone").value.trim();
+    const city = document.getElementById("city").value.trim();
+    const street = document.getElementById("street").value.trim();
+    const notes = document.getElementById("notes").value.trim();
+    const errorMsg = document.getElementById("address-error");
+
+    // تحقق من رقم الهاتف
+    const phonePattern = /^(010|011|012|015)[0-9]{8}$/;
+
+    if(!name || !phonePattern.test(phone) || !city || !street) {
+        // البيانات غير صحيحة
+        errorMsg.style.display = "block";
+        return;
+    }
+
+    // البيانات صحيحة
+    errorMsg.style.display = "none";
+
+    // تغيير لون الزر إلى الأخضر وعرض ✔
+    saveBtn.style.background = "#10b981";
+    saveBtn.textContent = "✔ Address Saved!";
+
+    // تفعيل قسم الدفع
+    const paymentSection = document.getElementById("payment-section");
+    paymentSection.style.pointerEvents = "auto";
+    paymentSection.style.opacity = "1";
+});
+</script>
 
 const radios=document.querySelectorAll("input[name='payment']");
 const creditInfo=document.getElementById("credit-info");
@@ -179,6 +192,74 @@ radios.forEach(r=>r.addEventListener("change",()=>{
   if(r.value==="credit"){ creditInfo.style.display="block"; creditInputs.forEach(i=>i.required=true); }
   else{ creditInfo.style.display="none"; creditInputs.forEach(i=>i.required=false); }
 }));
+</script>
+<script>
+// Load cart items into order page
+document.addEventListener("DOMContentLoaded", loadOrders);
+
+function loadOrders() {
+    const orders = JSON.parse(localStorage.getItem("cart")) || [];
+
+    const noOrders = document.getElementById("no-orders");
+    const hasOrders = document.getElementById("has-orders");
+    const container = document.getElementById("orders-list-container");
+    const count = document.getElementById("order-count");
+    const summary = document.getElementById("order-summary-details");
+
+    // لو مفيش منتجات
+    if (orders.length === 0) {
+        noOrders.style.display = "block";
+        hasOrders.style.display = "none";
+        return;
+    }
+
+    // لو في منتجات
+    noOrders.style.display = "none";
+    hasOrders.style.display = "block";
+    container.innerHTML = "";
+
+    let total = 0;
+
+    orders.forEach((item) => {
+        total += item.price * item.quantity;
+
+        container.innerHTML += `
+            <div class="order-item">
+                <img src="${item.img}" alt="${item.name}">
+                <div>
+                    <h3>${item.name}</h3>
+                    <p>Price: EGP ${item.price}</p>
+                    <p>Qty: ${item.quantity}</p>
+                </div>
+            </div>
+        `;
+    });
+
+    count.textContent = `${orders.length} items`;
+
+    summary.innerHTML = `
+        <p>Total Price: <strong>${total} EGP</strong></p>
+        <p>Shipping: <strong>Free</strong></p>
+        <p>Grand Total: <strong>${total} EGP</strong></p>
+    `;
+}
+
+// Clear all orders (clear cart)
+function clearAllOrders() {
+    localStorage.removeItem("cart");
+    location.reload();
+}
+document.getElementById("completePayment").addEventListener("click", function(e){
+    e.preventDefault(); 
+    alert("✔ Payment Completed Successfully!");
+    
+    
+    localStorage.removeItem("cart");
+
+    
+    location.reload();
+});
+
 </script>
 
 </body>
