@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Oppo Reno14F Dual SIM Luminous Green details page  </title> 
-  <link rel="stylesheet" href="CSS/p2.css">
-  <link rel="stylesheet" href="CSS/global.css">
+  <link rel="stylesheet" href="p2.css">
       <link rel="icon" href="https://thumbs.dreamstime.com/b/letter-ms-logo-hexagon-shape-colorful-background-company-identity-203773397.jpg" type="image/jpg"/>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
      <link rel="stylesheet" href="global.css">
@@ -20,9 +19,10 @@
 
         <ul class="nav-links">
           <li><a href="Home.html">Home</a></li>
-          <li><a href="phones.html">Products</a></li>
-          <li><a href="Contact_Us.html">Contact Us</a></li>
-          <li><a href="order.html">Payment</a></li>
+          <li><a href="Products.html">Products</a></li>
+          <li><a href="Accessories.html">Accessories</a></li>
+          <li><a href="Contact.html">Contact Us</a></li>
+          <li><a href="Profile.html">Profile</a></li>
           <li><a href="Cart.html">Cart</a></li>
         </ul>
 
@@ -52,7 +52,7 @@
            
               <p>This Item Has Been Add To Your Cart , Successfully!</p>
               <button type="button" onclick="closePopup()" > Close </button>
-               <a href="basket.html">
+               <a href="cart.html">
                 <button type="button" > Go To Cart</button> </a>
               </div>
             </div>
@@ -60,25 +60,25 @@
         <script>
            function addToCart(){ 
                 const product={
-               id: 9,
-name: "Bloom Vessel",
-price: 1000,
-image: "https://postimg.cc/Wh5KFJL7",
+               id: 4,
+name: " Oppo Reno14Fl",
+price: 18820.00,
+image: "https://i.postimg.cc/fV3q0Jz2/999d59cf-37f5-4842-b1c7-5f63df3f5a0f-removebg-preview.png",
 quantity: 1
                 };
-                let basket = JSON.parse(localStorage.getItem('basket')) || [];
-                const existingProduct = basket.find(p => p.id === product.id);
+                let cart = JSON.parse(localStorage.getItem('cart')) || [];
+                const existingProduct = cart.find(p => p.id === product.id);
                 if(existingProduct){
                   existingProduct.quantity += 1;
                 } else{
-                  basket.push(product);
+                  cart.push(product);
                 }
-            localStorage.setItem("basket",JSON.stringify(basket));
+            localStorage.setItem("cart",JSON.stringify(cart));
            
            openPopup();
             }
             function goToCart(){
-                window.location.href ="basket.html";
+                window.location.href ="cart.html";
             }
             function openPopup(){
                 document.getElementById("popup").classList.add("open-popup");
@@ -167,6 +167,20 @@ Very good product I am satisfied thanks"
  </div>       
    
             
+<script>
+
+
+  window.onload = function() {
+     
+      if (localStorage.getItem('dark-mode') === 'enabled') {
+          document.body.classList.add('dark-mode');
+      }
+  };
+
+  
+ 
+
+</script> 
 
 <br>
  <footer class="footer">
@@ -199,5 +213,4 @@ Very good product I am satisfied thanks"
 
 </body>
             </html>
-
            
