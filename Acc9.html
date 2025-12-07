@@ -70,7 +70,7 @@
             <span class="success">Success</span>
             <p>This item has been added to your cart successfully!</p>
             <button type="button" onclick="closePopup()">Close</button>
-            <a href="basket.html"><button type="button">Go To Cart</button></a>
+            <a href="cart.html"><button type="button">Go To Cart</button></a>
           </div>
         </div>
 
@@ -79,22 +79,22 @@
           function addToCart() {
             const product = {
               id: 9,
-              name: "Bloom Vessel",
-              price: 1000,
-              image: "https://postimg.cc/Wh5KFJL7",
+              name: "LENOK Silicone Double-Sided Suction Phone Case Detachable Mount",
+              price: 224.95,
+              image: "https://i.ibb.co/6cmMczw4/d0d0d91f-b445-4ae1-ae0a-831cae9588e2-removebg-preview.png",
               quantity: 1
             };
-            let basket = JSON.parse(localStorage.getItem('basket')) || [];
-            const existingProduct = basket.find(p => p.id === product.id);
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const existingProduct = cart.find(p => p.id === product.id);
             if (existingProduct) {
               existingProduct.quantity += 1;
             } else {
-              basket.push(product);
+              cart.push(product);
             }
-            localStorage.setItem("basket", JSON.stringify(basket));
+            localStorage.setItem("cart", JSON.stringify(cart));
             openPopup();
           }
-          function goToCart() { window.location.href = "basket.html"; }
+          function goToCart() { window.location.href = "cart.html"; }
           // openPopup/closePopup are implemented in script.js as well
         </script>
       </div>
