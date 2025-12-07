@@ -1,265 +1,179 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-
 <meta charset="UTF-8">
-
-<title>products page </title> 
-<link rel="stylesheet" href="CSS/phones.css">
-  <link rel="stylesheet" href="CSS/global.css">
-  <link rel="icon" href="https://thumbs.dreamstime.com/b/letter-ms-logo-hexagon-shape-colorful-background-combination-design-business-company-identity-203773397.jpg" type="image/jpg"/>
-   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-       <link rel="icon" href="https://thumbs.dreamstime.com/b/letter-ms-logo-hexagon-shape-colorful-background-combination-design-business-company-identity-203773397.jpg" type="image/jpg"/>
-
+<title>Products Page</title> 
+<link rel="stylesheet" href="phones.css">
+<link rel="stylesheet" href="global.css">
+<link rel="icon" href="https://thumbs.dreamstime.com/b/letter-ms-logo-hexagon-shape-colorful-background-combination-design-business-company-identity-203773397.jpg" type="image/jpg"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>     
-     
-  
+
+<body>
 <nav class="navbar">
-<div class="nav-container">
-  <div class="nav-logo"><span>MS</span><h3>Mobile Store</h3></div>
-  <ul class="nav-links">
-    <li><a href="Home.html">Home</a></li>
-    <li><a href="phones.html">Products</a></li>
-    <li><a href="Contact_Us.html">Contact Us</a></li>
-    <li><a href="order.html">Payment</a></li>
-    <li><a href="Cart.html">Cart</a></li>
-  </ul>
-  <div class="nav-auth"><a href="Login.html" class="btn-login">Logout</a></div>
-</div>
+  <div class="nav-container">
+    <div class="nav-logo">
+      <span>MS</span>
+      <h3>Mobile Store</h3>
+    </div>
+
+    <ul class="nav-links">
+      <li><a href="Home.html">Home</a></li>
+      <li><a href="Products.html">Products</a></li>
+      <li><a href="Accessories.html">Accessories</a></li>
+      <li><a href="Contact.html">Contact Us</a></li>
+      <li><a href="Profile.html">Profile</a></li>
+      <li><a href="Cart.html">Cart</a></li>
+    </ul>
+
+    <div class="nav-auth">
+      <a href="Login.html" class="btn-login">Logout</a>
+    </div>
+  </div>
 </nav>
 
-  <h2 style="text-align: center; margin: 30px 0;"> FEATURED PRODUCTS</h2>
+<h2 style="text-align: center; margin: 30px 0;"> FEATURED PRODUCTS</h2>
 
-   
-
-    <form method="get" class="search-form" >
-      <input type="text" name="name"  class = " search-bar"  placeholder=" Search for your phone here !"  list="product-list" autocomplete="on" >
-      <datalist id="product-list">
-        <option value=" samsung mobile">
-        <option value="iPhone 16 Pro Max ">
-        <option value="iphone 17 pro max">
-        <option value="oppo mobile">
-        <option value="iPhone 17 Pro Max "> 
-          <option value="honor mobile">
-          <option value="samsung mobile">
-          <option value="samsung mobile">
-          <option value="honor mobile">
-            
-    </datalist>
-      <button type="submit" class="search-button">Search</button>
+<!-- REMOVED onsubmit attribute from form -->
+<form class="search-form">
+  <input type="text" name="name" class="search-bar" placeholder=" Search for your phone here !" list="product-list" autocomplete="on">
   
-   </form> <br>
+  <datalist id="product-list">
+    <option value="Samsung Mobile">
+    <option value="Galaxy S24 Ultra">
+    <option value="S24 Ultra">
+    <option value="iPhone 16 Pro Max">
+    <option value="iPhone 17 Pro Max">
+    <option value="Oppo Mobile">
+    <option value="Honor Mobile">
+  </datalist>
+
+  <button type="button" class="search-button">Search</button>
+</form>
+<br>
+
 <div class="container">
-  <div class = " amazing"  data-name = " samsung mobile" >
-    <img src="https://i.postimg.cc/PNyZZwM2/b3a0240a-3279-4a89-a961-cc6e39921b6b-removebg-preview.png" alt="samsung mobile " width="200" height="200" class="image"
-     onmouseover="this.src='https://i.postimg.cc/TyQGQfHm/3cd37d21-e528-4a2a-8011-6bdff9e2f2f4-removebg-preview.png'"
-         onmouseout="this.src='https://i.postimg.cc/PNyZZwM2/b3a0240a-3279-4a89-a961-cc6e39921b6b-removebg-preview.png'" >  
-    <span > <span class="price-box" > <b>66000.00</b> EGP </span> </span > 
-     <br>
-    <a href="p1.html" title="Go to product page" target="_blank">  <span class="heb" >   Galaxy S24 Ultra Dual SIM Titanium Violet 12GB </span></a>
+  <div class="amazing" data-name="samsung mobile,samsung,s24,s24 ultra,galaxy s24 ultra">
+    <img src="https://i.postimg.cc/PNyZZwM2/b3a0240a-3279-4a89-a961-cc6e39921b6b-removebg-preview.png" width="200" height="200">
+    <span><span class="price-box"><b>66000.00</b> EGP </span></span><br>
+    <a href="p1.html" target="_blank"><span class="heb">Galaxy S24 Ultra Dual SIM Titanium Violet 12GB</span></a>
+  </div>
+
+  <div class="amazing" data-name="iphone 16 pro max,iphone 16,16 pro max,apple">
+    <img src="https://i.postimg.cc/0KkVn1Fk/f2a6c34a-077f-480d-a3d9-f0aeab9d3689-removebg-preview.png" width="200" height="150">
+    <span><span class="price-box"><b>77400.00</b> EGP</span></span><br>
+    <a href="p2.html" target="_blank"><span class="heb">IPhone 16 Pro Max 256GB Desert Titanium</span></a>
+  </div>
+
+  <div class="amazing" data-name="iphone 17 pro max,iphone 17,17 pro max,apple">
+    <img src="https://i.postimg.cc/YGmy5hZM/49febc17-0ec9-4250-82c4-6e367946cbfc-removebg-preview.png" width="100" height="150">
+    <span><span class="price-box"><b>90500.00</b> EGP </span></span><br>
+    <a href="p3.html" target="_blank"><span class="heb">IPhone 17 Pro Max 256 GB Deep Blue</span></a>
+  </div>
+
+  <div class="amazing" data-name="oppo mobile,oppo,reno14f">
+    <img src="https://i.postimg.cc/fV3q0Jz2/999d59cf-37f5-4842-b1c7-5f63df3f5a0f-removebg-preview.png" width="200" height="150">
+    <span><span class="price-box"><b>18820.00</b> EGP</span></span><br>
+    <a href="p4.html" target="_blank"><span class="heb">Reno14F Dual SIM</span></a>
+  </div>
+
+  <div class="amazing" data-name="iphone 17 pro max,iphone 17,17 pro max,apple">
+    <img src="https://i.postimg.cc/HcQv6KRR/d5f93e01-8aa6-4b8a-bf30-8b02a93adca9-removebg-preview.png" width="200" height="150">
+    <span><span class="price-box"><b>110000.00</b> EGP</span></span><br>
+    <a href="p5.html" target="_blank"><span class="heb">IPhone 17 Pro Max 512 GB Cosmic Orange</span></a>
+  </div>
+
+  <div class="amazing" data-name="honor mobile,honor,400 lite">
+    <img src="https://i.postimg.cc/zL1JtLf5/49e4af48-4e29-4a81-8f9e-0271710e269e-removebg-preview.png" width="200" height="150">
+    <span><span class="price-box"><b>12555.00</b> EGP </span></span><br>
+    <a href="p6.html" target="_blank"><span class="heb">400 LITE Dual SIM Velvet Black 5G</span></a>
+  </div>
+
+  <div class="amazing" data-name="samsung mobile,samsung,s24,s24 ultra,galaxy s24 ultra,gray">
+    <img src="https://i.postimg.cc/BPqfWyLK/3ce12b8d-b42a-4743-8cd8-da2ea0eaeeb1-removebg-preview.png" width="200" height="150">
+    <span><span class="price-box"><b>66500.00 </b> EGP </span></span><br>
+    <a href="p7.html" target="_blank"><span class="heb">Galaxy S24 Ultra Dual SIM Titanium Gray</span></a>
+  </div>
+
+  <div class="amazing" data-name="samsung mobile,samsung,z fold 5,fold,icy blue">
+    <img src="https://i.postimg.cc/vcYX9Mwn/0ea204d8-37b6-468e-b713-ced4d7bc6131-removebg-preview.png" width="200" height="150">
+    <span><span class="price-box"><b>83000.00</b> EGP </span></span><br>
+    <a href="p8.html" target="_blank"><span class="heb">Galaxy Z Fold 5 Dual SIM Icy Blue</span></a>
   </div> 
-    <div class = "amazing" data-name = "iPhone 16 Pro Max ">
-    <img src="https://i.postimg.cc/0KkVn1Fk/f2a6c34a-077f-480d-a3d9-f0aeab9d3689-removebg-preview.png" alt="iPhone 16 Pro Max  " width="200" height="150" class="image"
-     onmouseover="this.src='https://i.postimg.cc/NLK9yz55/987a0e34-56c8-451f-8cea-b2cc3e0cca78-removebg-preview.png'"
-         onmouseout="this.src='https://i.postimg.cc/0KkVn1Fk/f2a6c34a-077f-480d-a3d9-f0aeab9d3689-removebg-preview.png'">
-    <span > <span class="price-box" ><b>77400.00</b> EGP </span> </span >
-    <br>
-    <a href="p2.html" title="Go to product page" target="_blank">  <span class="heb" > IPhone 16 Pro Max 256GB Desert Titanium </span></a>
-   </div>
-    <div class = "amazing" data-name = "iphone 17 pro max">
-    <img src="https://i.postimg.cc/YGmy5hZM/49febc17-0ec9-4250-82c4-6e367946cbfc-removebg-preview.png" alt="iphone 17 pro max " width="100" height="150" class="image"
-      onmouseover="this.src='https://i.postimg.cc/YGmy5hZM/49febc17-0ec9-4250-82c4-6e367946cbfc-removebg-preview.png'"
-         onmouseout="this.src='https://i.postimg.cc/1nPqQdY4/83ade28e-356e-4ec5-b000-b4f5e324c298-removebg-preview.png'">
-    <span > <span class="price-box" ><b>90500.00</b> EGP </span> </span >
-    <br>
-    <a href="p3.html" title="Go to product page" target="_blank">  <span class="heb" >IPhone 17 Pro Max 256 GB Deep Blue  </span></a>
-    </div>
-    <div class = "amazing" data-name = "oppo mobile">
-      <img src="https://i.postimg.cc/fV3q0Jz2/999d59cf-37f5-4842-b1c7-5f63df3f5a0f-removebg-preview.png" alt="oppo mobile " width="200" height="150" class="image"
-       onmouseover="this.src='https://i.postimg.cc/xJjKM4vZ/81147101-18f7-4a8b-83be-b22d5dd85f6d-removebg-preview.png'"
-         onmouseout="this.src='https://i.postimg.cc/fV3q0Jz2/999d59cf-37f5-4842-b1c7-5f63df3f5a0f-removebg-preview.png'">
-      <span > <span class="price-box" >  <b>18820.00</b> EGP </span> </span >
-      <br>
-      <a href="p4.html" title="Go to product page" target="_blank">  <span class="heb" >Reno14F Dual SIM </span></a>
-      </div>  
-      <div class = "amazing" data-name = "iPhone 17 Pro Max ">
-      <img src="https://i.postimg.cc/HcQv6KRR/d5f93e01-8aa6-4b8a-bf30-8b02a93adca9-removebg-preview.png" alt="iPhone 17 Pro Max  " width="200" height="150" class="image"
-        onmouseover="this.src='https://i.postimg.cc/jLFVnVb8/f7719efc-8605-493b-a2c9-e669c5b33e31-removebg-preview.png'"
-         onmouseout="this.src='https://i.postimg.cc/HcQv6KRR/d5f93e01-8aa6-4b8a-bf30-8b02a93adca9-removebg-preview.png'">
-      <span > <span class="price-box" ><b>110000.00</b> EGP </span> </span >
-      <br>
-     <a href="p5.html" title="Go to product page" target="_blank">  <span class="heb" >IPhone 17 Pro Max 512 GB Cosmic Orange </span></a>
-      </div>     
-      <div class = "amazing" data-name = "honor mobile">  
-      <img src="https://i.postimg.cc/zL1JtLf5/49e4af48-4e29-4a81-8f9e-0271710e269e-removebg-preview.png" alt="honor mobile " width="200" height="150" class="image"
-       onmouseover="this.src='https://i.postimg.cc/kXDrzcxh/42351047-e8c2-4900-b18b-90251c1168ec-removebg-preview.png'"
-         onmouseout="this.src='https://i.postimg.cc/zL1JtLf5/49e4af48-4e29-4a81-8f9e-0271710e269e-removebg-preview.png'" >
-      <span > <span class="price-box" >  <b>12555.00</b> EGP </span> </span >
-      <br>
-      <a href="p6.html" title="Go to product page" target="_blank">  <span class="heb" >400 LITE Dual SIM Velvet Black 5G </span></a>
-      </div>
-     
-       <div class = "amazing" data-name = "samsung mobile">  
-      <img src="https://i.postimg.cc/BPqfWyLK/3ce12b8d-b42a-4743-8cd8-da2ea0eaeeb1-removebg-preview.png" alt="samsung mobile " width="200" height="150" class="image"
-       onmouseover="this.src='https://i.postimg.cc/34qmzMbv/994cd8db-d260-4923-a69d-b7ce347da85e-removebg-preview.png'"
-         onmouseout="this.src='https://i.postimg.cc/BPqfWyLK/3ce12b8d-b42a-4743-8cd8-da2ea0eaeeb1-removebg-preview.png'">
-      <span > <span class="price-box" >  <b>66500.00 </b> EGP </span> </span >
-      <br>
-      <a href="p7.html" title="Go to product page" target="_blank">  <span class="heb" >Galaxy S24 Ultra Dual SIM Titanium Gray </span></a>
-      </div>
-     
-      <div class = "amazing" data-name = "samsung mobile ">  
-      <img src="https://i.postimg.cc/vcYX9Mwn/0ea204d8-37b6-468e-b713-ced4d7bc6131-removebg-preview.png" alt="samsung mobile " width="200" height="150" class="image"
-       onmouseover="this.src='https://i.postimg.cc/Vd0vK0ws/70a9c639-9fb3-46ed-865b-8701ae1dffd8-removebg-preview.png'"
-         onmouseout="this.src='https://i.postimg.cc/vcYX9Mwn/0ea204d8-37b6-468e-b713-ced4d7bc6131-removebg-preview.png'">
-      <span > <span class="price-box" > <b>83000.00</b> EGP </span> </span >
-      <br>
-      <a href="p8.html" title="Go to product page" target="_blank">  <span class="heb" >Galaxy Z Fold 5 Dual SIM Icy Blue</span></a>
-      </div> 
-      <div class="amazing" data-name = " honor mobile">
-      <img src="https://i.postimg.cc/3439BH02/67c043aa-a26d-4a43-94cb-7b29b04d8f74-removebg-preview.png" alt=" honor mobile " width="200" height="150" class="image"
-       onmouseover="this.src='https://i.postimg.cc/pyh566Q3/4b3e5dc3-86ac-4199-b713-6320f826529e-removebg-preview.png'"
-         onmouseout="this.src='https://i.postimg.cc/3439BH02/67c043aa-a26d-4a43-94cb-7b29b04d8f74-removebg-preview.png'">
-       <span > <span class="price-box" > <b>20499.00</b> EGP </span> </span >  
-       <br>
-       <a href="p9.html" title="Go to product page" target="_blank">  <span class="heb" >  Honor 400 5G Dual SIM Midnight Black</span></a>
-      </div>
-  </div> 
-  <div id="no-results" style="display: none; text-align: center; font-size: 18px; color: rgb(0, 0, 0);">
-    No results found.
-  </div> <script>
-  document.querySelector('.search-bar').addEventListener('input', function () {
-    const searchValue = this.value.toLowerCase();
-    const products = document.querySelectorAll('.amazing');
-    let hasResults = false;
-  
-    products.forEach(product => {
-        const productName = product.getAttribute('data-name').toLowerCase();
-        if (productName.includes(searchValue)) {
-            product.style.display = 'flex';
-            hasResults = true;
-        } else {
-            product.style.display = 'none';
-        }
-    });
-  
-    const noResultsMessage = document.getElementById('no-results');
-    if (noResultsMessage) {
-        noResultsMessage.style.display = hasResults ? 'none' : 'block';
-    }
-  });  </script>
-   
-  
-  <script>
-   
-    const products = document.querySelectorAll('.amazing');
-  
-    
-    function isInViewport(element) {
-        const rect = element.getBoundingClientRect();
-        return (
-            rect.top < window.innerHeight && rect.bottom > 0
-        );
-    }
-  
-    
-    function handleScroll() {
-        products.forEach(product => {
-            if (!isInViewport(product)) {
-                product.classList.add('hidden'); 
-            } else {
-                product.classList.remove('hidden'); 
-            }
-        });
-    }
-  
-    
-    window.addEventListener('scroll', handleScroll);
-    document.querySelector('.search-bar').addEventListener('input', function () {
-      const searchValue = this.value.toLowerCase();
-      let hasResults = false;
 
-      products.forEach(product => {
-          const productName = product.getAttribute('data-name').toLowerCase();
-          if (productName.includes(searchValue)) {
-              product.style.display = 'block';
-              hasResults = true;
-          } else {
-              product.style.display = 'none';
-          }
-      });
+  <div class="amazing" data-name="honor mobile,honor,400 5g,midnight black">
+    <img src="https://i.postimg.cc/3439BH02/67c043aa-a26d-4a43-94cb-7b29b04d8f74-removebg-preview.png" width="200" height="150">
+    <span><span class="price-box"><b>20499.00</b> EGP </span></span><br>
+    <a href="p9.html" target="_blank"><span class="heb">Honor 400 5G Dual SIM Midnight Black</span></a>
+  </div>
+</div>
 
-      const noResultsMessage = document.getElementById('no-results');
-      if (noResultsMessage) {
-          noResultsMessage.style.display = hasResults ? 'none' : 'block';
-      }
-  });
+<div id="no-results" style="display:none; text-align:center; font-size:18px; margin: 30px 0;">
+  No results found.
+</div>
 
-  
-  handleScroll();
-</script> <script>
-  
-document.querySelector('.search-bar').addEventListener('input', function () {
-  const searchValue = this.value.toLowerCase();
-  const products = document.querySelectorAll('.amazing');
-  let hasResults = false;
-
-  products.forEach(product => {
-      const productName = product.getAttribute('data-name').toLowerCase();
-      if (productName.includes(searchValue)) {
-          product.style.display = 'block'; 
-          hasResults = true;
-      } else {
-          product.style.display = 'none'; 
-      }
-  });
-
-  const noResultsMessage = document.getElementById('no-results');
-  if (noResultsMessage) {
-      noResultsMessage.style.display = hasResults ? 'none' : 'block';
-  }
+<script>
+// Prevent form submission on submit event
+document.querySelector('.search-form').addEventListener('submit', function(e) {
+    e.preventDefault();
 });
 
- </script>
+// Real-time search as user types
+document.querySelector('.search-bar').addEventListener('input', function () {
+  const searchValue = this.value.toLowerCase().trim();
+  const products = document.querySelectorAll('.amazing');
+  let found = false;
 
+  products.forEach(product => {
+      const aliases = product.getAttribute('data-name').toLowerCase().split(',');
+      const match = aliases.some(name => name.includes(searchValue));
 
+      if (match || searchValue === "") {
+          product.style.display = 'flex';
+          found = true;
+      } else {
+          product.style.display = 'none';
+      }
+  });
+
+  document.getElementById('no-results').style.display = found ? 'none' : 'block';
+});
+
+// Optional: Also handle search button click
+document.querySelector('.search-button').addEventListener('click', function(e) {
+    e.preventDefault();
+    // Trigger the input event to perform search
+    document.querySelector('.search-bar').dispatchEvent(new Event('input'));
+});
 </script>
-   
 
-
-  <footer class="footer">
+<footer class="footer">
     <div class="footer-container">
-
-      <div>
-        <div class="footer-logo">
-          <span>MS</span>
-          <h3>Mobile Store</h3>
+        <div>
+            <div class="footer-logo">
+                <span>MS</span>
+                <h3>Mobile Store</h3>
+            </div>
+            <p style="color: var(--footer-mid); line-height: 1.6;">
+                Your trusted place for all mobile phones, accessories, repairs, and latest tech solutions.
+            </p>
         </div>
 
-        <p style="color: var(--footer-mid); line-height: 1.6;">
-          Your trusted place for all mobile phones, accessories, repairs, and latest tech solutions.
-        </p>
-      </div>
-
-      <div>
-        <h4 class="footer-title">Quick Links</h4>
-        <div class="footer-links-row">
-          <a href="Home.html">Home</a>
-          <a href="phones.html">Products</a>
-          <a href="Contact_Us.html">Contact Us</a>
-           
+        <div>
+            <h4 class="footer-title">Quick Links</h4>
+            <div class="footer-links-row">
+                <a href="Home.html">Home</a>
+                <a href="#">Shop</a>
+                <a href="#">Offers</a>
+                <a href="#">Contact Us</a>
+                <a href="#">About Us</a>
+            </div>
         </div>
-      </div>
-
     </div>
-
     <div class="footer-bottom">
-      © 2025 Mobile Store. All Rights Reserved.
+        © 2025 Mobile Store. All Rights Reserved.
     </div>
-  </footer>
-
+</footer>
 
 </body>
-
 </html>
