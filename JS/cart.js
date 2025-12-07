@@ -90,3 +90,69 @@ document.addEventListener("DOMContentLoaded", () => {
     // Load cart initially
     displayCart();
 });
+
+    const cartContainer = document.getElementById("cartContainer");
+
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    if (cart.length === 0) {
+      cartContainer.innerHTML = "<p class='empty-cart'>Your cart is empty!</p>";
+    } 
+    else {
+      let total = 0;
+
+      cart.forEach((item, index) => {
+        const div = document.createElement("div");
+        div.classList.add("cart-item");
+
+        div.innerHTML = `
+          <img src="${item.image}" alt="${item.name}" class="cart-image">
+
+          <div class="cart-details">
+            <h3>${item.name}</h3>
+            <p>Price: EGP ${item.price.toFixed(2)}</p><div class="qty-box">
+              <button class="qty-btn" onclick="updateQty(${index}, -1)">-</button>
+              <span class="qty-number">${item.quantity}</span>
+              <button class="qty-btn" onclick="updateQty(${index}, 1)">+</button>
+            </div>
+
+            <button class="delete-btn" onclick="removeItem(${index})">Remove</button>
+          </div>
+        `;
+
+        cartContainer.appendChild(div);
+
+        total += item.price * item.quantity;
+      });
+
+      const totalDiv = document.createElement("div");
+      totalDiv.classList.add("cart-total");
+      totalDiv.innerHTML = `
+        <h3>Total: EGP ${total.toFixed(2)}</h3>
+        <button onclick="checkout()">Checkout</button>
+      `;
+      cartContainer.appendChild(totalDiv);
+    }
+
+    function checkout() {
+      alert("Proceeding to payment...");
+      window.location.href = "order.html";
+    }
+
+    function removeItem(index) {
+      cart.splice(index, 1);
+      localStorage.setItem("cart", JSON.stringify(cart));
+      location.reload();
+    }
+
+    function updateQty(index, change) {
+      cart[index].quantity += change;
+
+      if (cart[index].quantity <= 0) {
+        removeItem(index);
+        return;
+      }
+
+      localStorage.setItem("cart", JSON.stringify(cart));
+      location.reload();
+    }
