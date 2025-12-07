@@ -1,185 +1,190 @@
 <!DOCTYPE html>
 <html lang="en">
-<head> 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Earbuds</title>
-     <link rel="stylesheet" href="global.css"> 
-     <link rel="stylesheet" href="Acc.css">
-     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-     <meta http-equiv="Pragma" content="no-cache">
-     <meta http-equiv="Expires" content="0">
-     <link rel="icon" href="https://thumbs.dreamstime.com/b/letter-ms-logo-hexagon-shape-colorful-background-company-identity-203773397.jpg" type="image/jpg"/>
-     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-</head>
-<body> 
-    <nav class="navbar">
-      <div class="nav-container">
-        <div class="nav-logo">
-          <span>MS</span>
-          <h3>Mobile Store</h3>
-        </div>
+<head>
+<meta charset="UTF-8">
+<title>Accessories Page</title> 
+<link rel="stylesheet" href="Accessories.css">
+<link rel="stylesheet" href="global.css">
+<link rel="icon" href="https://thumbs.dreamstime.com/b/letter-ms-logo-hexagon-shape-colorful-background-combination-design-business-company-identity-203773397.jpg" type="image/jpg"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>     
 
-        <ul class="nav-links">
-          <li><a href="Home.html">Home</a></li>
-          <li><a href="Products.html">Products</a></li>
-          <li><a href="Accessories.html">Accessories</a></li>
-          <li><a href="Contact.html">Contact Us</a></li>
-          <li><a href="Profile.html">Profile</a></li>
-          <li><a href="Cart.html">Cart</a></li>
-        </ul>
+<body>
+<nav class="navbar">
+  <div class="nav-container">
+    <div class="nav-logo">
+      <span>MS</span>
+      <h3>Mobile Store</h3>
+    </div>
 
-        <div class="nav-auth">
-          <a href="Login.html" class="btn-login">Logout</a>
-        </div>
-      </div>
-  </nav>
-  
-<br><br><br><br>
+    <ul class="nav-links">
+      <li><a href="Home.html">Home</a></li>
+      <li><a href="Products.html">Products</a></li>
+      <li><a href="Accessories.html">Accessories</a></li>
+      <li><a href="Contact.html">Contact Us</a></li>
+      <li><a href="Profile.html">Profile</a></li>
+      <li><a href="Cart.html">Cart</a></li>
+    </ul>
 
-<span id="product-name" title="phone name" class="product-name">Liberty 4 NC Earbuds</span>
+    <div class="nav-auth">
+      <a href="Login.html" class="btn-login">Logout</a>
+    </div>
+  </div>
+</nav>
 
-<div class="product-section" data-name="Liberty 4 NC Earbuds" data-hover-img="https://i.ibb.co/bgdcL0Dw/dbdfce5a-42ab-4a54-9c27-2e1eb9e74f8e-removebg-preview.png">
-  <div class="image-container">
-    <img id="product-image" src="https://i.ibb.co/4nNXb05j/5998fa78-1483-43d9-821a-14cae035f631-removebg-preview.png" alt="Accessory photo" title="Accessory photo" class="custom-image"
+<h2 style="text-align: center; margin: 30px 0;">FEATURED ACCESSORIES</h2>
+
+<form class="search-form">
+  <input type="text" name="name" class="search-bar" placeholder="Search for your accessory here!" list="product-list" autocomplete="on">
+  <datalist id="product-list">
+    <option value="Power Bank">
+    <option value="SmartTag2">
+    <option value="Screen Protector">
+    <option value="Charger">
+    <option value="Earbuds">
+    <option value="Stabilizer">
+    <option value="Case Cover">
+    <option value="Lens Protector">
+    <option value="Double-Sided">
+  </datalist>
+  <button type="button" class="search-button">Search</button>
+</form>
+<br>
+
+<div class="container">
+  <div class="amazing" data-name="power bank,zolo power bank,portable battery">
+    <img src="https://i.ibb.co/nMYmB4b3/f6658f66-d2f2-43bd-82e5-edbe26fe468e-removebg-preview.png" width="200" height="200" 
+         onmouseover="this.src='https://i.ibb.co/4RTrB77k/2cf0f793-07d8-4a2d-b417-77d4f20dc341-removebg-preview.png'"
+         onmouseout="this.src='https://i.ibb.co/nMYmB4b3/f6658f66-d2f2-43bd-82e5-edbe26fe468e-removebg-preview.png'">
+    <span><span class="price-box"><b>2350.00</b> EGP</span></span><br>
+    <a href="Acc1.html" target="_blank"><span class="heb">Zolo Power Bank</span></a>
+  </div>
+
+  <div class="amazing" data-name="smarttag2,galaxy smarttag2,tracker">
+    <img src="https://i.ibb.co/STYcFCy/42abb7e9-86c4-4776-b0a0-873cfe7a179b-removebg-preview.png" width="200" height="150"
+         onmouseover="this.src='https://i.ibb.co/zVY1s0LG/e8c8ca1e-b610-4da1-8231-4c7362ab03ef-removebg-preview.png'"
+         onmouseout="this.src='https://i.ibb.co/STYcFCy/42abb7e9-86c4-4776-b0a0-873cfe7a179b-removebg-preview.png'">
+    <span><span class="price-box"><b>1199.00</b> EGP</span></span><br>
+    <a href="Acc2.html" target="_blank"><span class="heb">Galaxy SmartTag2</span></a>
+  </div>
+
+  <div class="amazing" data-name="screen protector,privacy protector">
+    <img src="https://i.ibb.co/zVTVFGF5/a56ccfc7-48a3-44c1-a6e0-58acefb4dd45-removebg-preview.png" width="100" height="150"
+         onmouseover="this.src='https://i.ibb.co/JwQT5RSL/8b98e45a-be6e-4b95-b749-eb25d2e515d2-removebg-preview.png'"
+         onmouseout="this.src='https://i.ibb.co/zVTVFGF5/a56ccfc7-48a3-44c1-a6e0-58acefb4dd45-removebg-preview.png'">
+    <span><span class="price-box"><b>250.00</b> EGP</span></span><br>
+    <a href="Acc3.html" target="_blank"><span class="heb">Privacy Screen Protector</span></a>
+  </div>
+
+  <div class="amazing" data-name="charger,os-baseus gan5 pro">
+    <img src="https://i.ibb.co/9kDXdQFm/76efbb05-f6bb-4103-86fb-2fca4150b507-removebg-preview.png" width="200" height="150"
+         onmouseover="this.src='https://i.ibb.co/HpX8KNy1/dcdb2549-98ad-43eb-b294-a2a8aca5e1f6-removebg-preview.png'"
+         onmouseout="this.src='https://i.ibb.co/9kDXdQFm/76efbb05-f6bb-4103-86fb-2fca4150b507-removebg-preview.png'">
+    <div class="price-badge" style="display:inline-block; background:#fff; padding:8px 16px; border-radius:20px; font-size:18px; font-weight:bold; border:2px solid #0a264f;">
+      <span style="text-decoration: line-through; color: gray; margin-right:10px;">500.00 EGP</span>
+      <span style="color:#070a10;">350.00 EGP</span>
+    </div>
+    <br>
+    <a href="Acc4.html" target="_blank"><span class="heb">OS-Baseus GaN5 Pro Fast Charger</span></a>
+  </div>
+
+  <div class="amazing" data-name="earbuds,liberty 4 nc,headphones">
+    <img src="https://i.ibb.co/4nNXb05j/5998fa78-1483-43d9-821a-14cae035f631-removebg-preview.png" width="200" height="150"
          onmouseover="this.src='https://i.ibb.co/bgdcL0Dw/dbdfce5a-42ab-4a54-9c27-2e1eb9e74f8e-removebg-preview.png'"
-         onmouseout="this.src= 'https://i.ibb.co/4nNXb05j/5998fa78-1483-43d9-821a-14cae035f631-removebg-preview.png'">
+         onmouseout="this.src='https://i.ibb.co/4nNXb05j/5998fa78-1483-43d9-821a-14cae035f631-removebg-preview.png'">
+    <div class="price-badge" style="display:inline-block; background:#fff; padding:8px 16px; border-radius:20px; font-size:18px; font-weight:bold; border:2px solid #0a264f;">
+      <span style="text-decoration: line-through; color: gray; margin-right:10px;">3500.00 EGP</span>
+      <span style="color:#070a10;">2699.00 EGP</span>
+    </div>
+    <br>
+    <a href="Acc5.html" target="_blank"><span class="heb">Liberty 4 NC Earbuds</span></a>
   </div>
 
-  <div class="text-box">
-    <div class="product-details">
-      <strong>Price</strong>
-      <b>
-        <span title="original price" style="text-decoration: line-through; color: gray; margin-right: 10px;">EGP 3500.00</span>
-        <span title="discounted price" style="color:  #070a10; font-weight: bold;">EGP 2699.00</span>
-      </b>
+  <div class="amazing" data-name="stabilizer,osmo mobile 7p,gimbal">
+    <img src="https://i.ibb.co/zH6Tdbqx/e8120089-987e-4adf-a228-c80edbfbde3d-removebg-preview.png" width="200" height="150"
+         onmouseover="this.src='https://i.ibb.co/dsbF88pW/3db8f493-73e0-4f6b-a73b-f4e61d81b420-removebg-preview.png'"
+         onmouseout="this.src='https://i.ibb.co/zH6Tdbqx/e8120089-987e-4adf-a228-c80edbfbde3d-removebg-preview.png'">
+    <span><span class="price-box"><b>6850.00</b> EGP</span></span><br>
+    <a href="Acc6.html" target="_blank"><span class="heb">Osmo Mobile 7P Gimbal Stabilizer</span></a>
+  </div>
+
+  <div class="amazing" data-name="case cover,shock resistant">
+    <img src="https://i.ibb.co/Wv70DYX6/e0879b48-f2d8-4e49-a4a7-89b509d18a6f-removebg-preview.png" width="200" height="150"
+         onmouseover="this.src='https://i.ibb.co/BHP2fhCq/3d407b88-872f-46e2-a5de-f644663fd6f0-removebg-preview.png'"
+         onmouseout="this.src='https://i.ibb.co/Wv70DYX6/e0879b48-f2d8-4e49-a4a7-89b509d18a6f-removebg-preview.png'">
+    <span><span class="price-box"><b>250.00</b> EGP</span></span><br>
+    <a href="Acc7.html" target="_blank"><span class="heb">Case Cover Shock Resistant</span></a>
+  </div>
+
+  <div class="amazing" data-name="lens protector,samsung lens protector">
+    <img src="https://i.ibb.co/dwz154C8/098f3b43-93e6-4a67-b194-78ba15086bde-removebg-preview.png" width="200" height="150"
+         onmouseover="this.src='https://i.ibb.co/NbgzRtb/dc757f1e-c724-4115-86f1-de409dd5ec7b-removebg-preview.png'"
+         onmouseout="this.src='https://i.ibb.co/dwz154C8/098f3b43-93e6-4a67-b194-78ba15086bde-removebg-preview.png'">
+    <div class="price-badge" style="display:inline-block; background:#fff; padding:8px 16px; border-radius:20px; font-size:18px; font-weight:bold; border:2px solid #0a264f;">
+      <span style="text-decoration: line-through; color: gray; margin-right:10px;">750.00 EGP</span>
+      <span style="color:#070a10;">699.00 EGP</span>
     </div>
+    <br>
+    <a href="Acc8.html" target="_blank"><span class="heb">Lens Protector for Samsung</span></a>
+  </div>
 
-    <div class="message">
-      <span class="cart" title="Go to cart page">
-        <button type="button" class="add" onclick="addToCart()">
-          <span class="material-icons">shopping_cart</span> Add To Cart
-        </button>
-      </span>
-
-      <div class="popup" id="popup">
-        <img src="https://i.postimg.cc/Bnsg5bDd/photo-2025-05-03-01-21-22-removebg-preview.png" alt="success">
-        <span class="success">Success</span>
-        <p>This item has been added to your cart successfully!</p>
-        <button type="button" onclick="closePopup()">Close</button>
-        <a href="basket.html"><button type="button">Go To Cart</button></a>
-      </div>
-    </div>
-
-    <script src="script.js"></script>
-
-    <script>
-      function addToCart() {
-        const product = {
-          id: 9,
-          name: "Liberty 4 NC Earbuds",
-          price: 350,
-          image: "https://i.ibb.co/9kDXdQFm/76efbb05-f6bb-4103-86fb-2fca4150b507-removebg-preview.png",
-          quantity: 1
-        };
-
-        let basket = JSON.parse(localStorage.getItem('basket')) || [];
-        const existingProduct = basket.find(p => p.id === product.id);
-
-        if (existingProduct) {
-          existingProduct.quantity += 1;
-        } else {
-          basket.push(product);
-        }
-
-        localStorage.setItem("basket", JSON.stringify(basket));
-        openPopup();
-      }
-
-      function goToCart() { window.location.href = "basket.html"; }
-    </script>
+  <div class="amazing" data-name="double-sided,lenok silicone">
+    <img src="https://i.ibb.co/6cmMczw4/d0d0d91f-b445-4ae1-ae0a-831cae9588e2-removebg-preview.png" width="200" height="150"
+         onmouseover="this.src='https://i.ibb.co/yDBTG9w/a355316d-b151-4eab-850e-2b446ce65afd-removebg-preview.png'"
+         onmouseout="this.src='https://i.ibb.co/6cmMczw4/d0d0d91f-b445-4ae1-ae0a-831cae9588e2-removebg-preview.png'">
+    <span><span class="price-box"><b>224.95</b> EGP</span></span><br>
+    <a href="Acc9.html" target="_blank"><span class="heb">LENOK Silicone Double-Sided</span></a>
   </div>
 </div>
 
-<div class="description-title"> <span title="Product details"> <b>Specifications</b> </span> </div>
-<div class="bouquet-description"></div>
-
-<div class="specs" role="region" aria-label="Product specifications">
- <!-- Specs two-column block -->
-    <div class="specs">
-      <table class="specs-table">
-        <tbody>
-          <!--<tr><td class="spec-label">Product Weight</td><td class="spec-value">215 g</td></tr>
-        -->
-          <tr><td class="spec-label">Average Battery Life	</td><td class="spec-value">8hrs - 11hrs</td></tr>
-          <tr><td class="spec-label">Connection Type</td><td class="spec-value">True Wireless</td></tr>
-          <!--<tr><td class="spec-label">Product Length</td><td class="spec-value">108 mm</td></tr>-->
-          <tr><td class="spec-label">Audio Jack</td><td class="spec-value">Type-C</td></tr>
-          <tr><td class="spec-label">Audio Headphone Type</td><td class="spec-value">In-Ear</td></tr>
-          <tr><td class="spec-label">Number of pieces</td><td class="spec-value">1</td></tr>
-        </tbody>
-      </table>
-
-      <table class="specs-table">
-        <tbody>
-          <tr><td class="spec-label">Model Name</td><td class="spec-value">Soundcore Headphone</td></tr>
-         <!---- <tr><td class="spec-label">Model Number</td><td class="spec-value">A3947, A3947H31, A3947Z31, A3947G31</td></tr>
-          <tr><td class="spec-label">Feature</td><td class="spec-value">Active Noise Cancellation, Bluetooth, Water Resistant, Volume Control</td></tr>
-          <tr><td class="spec-label">What's In The Box</td><td class="spec-value">Earphones, Charging case, 4 pairs of eartips (XS, S, M, L), Type C Connector x 1, Multiple Language QSG x 1, Safety Card x 1</td></tr>
-        -->
-          <tr><td class="spec-label">Product Height</td><td class="spec-value">55 mm</td></tr>
-          <tr><td class="spec-label">Colour Name</td><td class="spec-value">Navy Blue</td></tr>
-          <tr><td class="spec-label">Usage Type</td><td class="spec-value">Sports & Fitness</td></tr>
-        </tbody>
-      </table>
-    </div>
+<div id="no-results" style="display:none; text-align:center; font-size:18px; margin: 30px 0;">
+  No results found.
 </div>
-
-<span class="reviews-title" title="customer reviews"> Customer Reviews </span>
-<div class="reviews" style="margin-top: 60px;">
-  <div class="review-item">
-    <div>
-      <span class="customer-names"><b>Omnia Ramadan</b></span>
-      <span class="verified">verified customer</span>
-      <span class="rating"> Rating:⭐⭐</span>
-    </div>
-    <div class="review">"Just Ok
-I bought the Liberty 4 NC two days ago and I like it overall ."</div>
-  </div>
-
-  <div class="review-item">
-    <div>
-      <span class="customer-names"><b>Salma Ehab</b></span>
-      <span class="verified">verified customer</span>
-      <span class="rating"> Rating:⭐⭐⭐</span>
-    </div>
-    <div class="review">"Good earbuds however
-These are good earbuds as expected."</div>
-  </div>
-
-  <div class="review-item">
-    <div>
-      <span class="customer-names"><b>Ahmed Ali</b></span>
-      <span class="verified">verified customer</span>
-      <span class="rating"> Rating:⭐⭐⭐</span>
-    </div>
-    <div class="review">"Liberty 4 nc earbuds are very good. The sound quality is amazing. If you charge it for 10 minutes, you can use it for a long time.."</div>
-  </div>
-</div>       
 
 <script>
-    const popup = document.getElementById("popup");
+// Real-time search with aliases
+document.querySelector('.search-form').addEventListener('submit', e => e.preventDefault());
 
-    function openPopup() {
-        popup.classList.add("open-popup");
-    }
+document.querySelector('.search-bar').addEventListener('input', function () {
+  const searchValue = this.value.toLowerCase().trim();
+  const products = document.querySelectorAll('.amazing');
+  let found = false;
 
-    function closePopup() {
-        popup.classList.remove("open-popup");
-    }
-</script> 
+  products.forEach(product => {
+      const aliases = product.getAttribute('data-name').toLowerCase().split(',');
+      const match = aliases.some(name => name.includes(searchValue));
+      if (match || searchValue === "") {
+          product.style.display = 'flex';
+          found = true;
+      } else {
+          product.style.display = 'none';
+      }
+  });
 
-<br>
+  document.getElementById('no-results').style.display = found ? 'none' : 'block';
+});
+
+document.querySelector('.search-button').addEventListener('click', function(e){
+  e.preventDefault();
+  document.querySelector('.search-bar').dispatchEvent(new Event('input'));
+});
+
+// Optional scroll hide/show
+const products = document.querySelectorAll('.amazing');
+function isInViewport(el) {
+  const rect = el.getBoundingClientRect();
+  return rect.top < window.innerHeight && rect.bottom > 0;
+}
+function handleScroll() {
+  products.forEach(product => {
+    if (!isInViewport(product)) product.classList.add('hidden');
+    else product.classList.remove('hidden');
+  });
+}
+window.addEventListener('scroll', handleScroll);
+handleScroll();
+</script>
+
 <footer class="footer">
   <div class="footer-container">
     <div>
@@ -187,23 +192,23 @@ These are good earbuds as expected."</div>
         <span>MS</span>
         <h3>Mobile Store</h3>
       </div>
-      <p style="color: var(--footer-mid); line-height: 1.6;">
-          Your trusted place for all mobile phones, accessories, repairs, and latest tech solutions.
+      <p style="color: var(--footer-mid); line-height:1.6;">
+        Your trusted place for all mobile phones, accessories, repairs, and latest tech solutions.
       </p>
     </div>
     <div>
       <h4 class="footer-title">Quick Links</h4>
       <div class="footer-links-row">
-          <a href="Home.html">Home</a>
-          <a href="#">Shop</a>
-          <a href="#">Offers</a>
-          <a href="#">Contact Us</a>
-          <a href="#">About Us</a>
+        <a href="Home.html">Home</a>
+        <a href="#">Shop</a>
+        <a href="#">Offers</a>
+        <a href="#">Contact Us</a>
+        <a href="#">About Us</a>
       </div>
     </div>
   </div>
   <div class="footer-bottom">
-      © 2025 Mobile Store. All Rights Reserved.
+    © 2025 Mobile Store. All Rights Reserved.
   </div>
 </footer>
 
