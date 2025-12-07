@@ -226,7 +226,8 @@ function loadOrders() {
 
         container.innerHTML += `
             <div class="order-item">
-                <img src="${item.img}" alt="${item.name}">
+                <img src="${item.img || item.image}" alt="${item.name}">
+
                 <div>
                     <h3>${item.name}</h3>
                     <p>Price: EGP ${item.price}</p>
